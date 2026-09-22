@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | MCNP &amp; ISAP Research &amp; Development Center</title>
+  <title>News &amp; Events | MCNP &amp; ISAP Research &amp; Development Center</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ===== Event Detail Modal (click-to-expand) ===== */
@@ -336,12 +336,8 @@
               </div>
             </li>
 
-            <li class="nav-item dropdown">
-              <a href="news.html" class="nav-link">NEWS <span class="arrow">&#9662;</span></a>
-              <div class="dropdown-menu">
-                <a href="news.html" class="dropdown-link"><span>News</span></a>
-                <a href="news-events.html" class="dropdown-link active"><span>Events</span></a>
-              </div>
+            <li class="nav-item">
+              <a href="news-events.html" class="nav-link active">NEWS &amp; EVENTS</a>
             </li>
 
             <li class="nav-item">
@@ -363,10 +359,10 @@
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumbs">
-        <a href="index.html">Home</a> &gt; <span>Events</span>
+        <a href="index.html">Home</a> &gt; <span>News &amp; Events</span>
       </div>
-      <h1>Events</h1>
-      <p>Explore research colloquiums, scholarly seminars, workshops, and institutional activities across MCNP &amp; ISAP.</p>
+      <h1>News &amp; Events</h1>
+      <p>Explore research breakthroughs, institutional updates, scholarly colloquiums, workshops, and milestones across MCNP &amp; ISAP.</p>
     </div>
   </section>
 
@@ -418,15 +414,15 @@
 
       <section aria-labelledby="event-highlights-title">
         <div class="section-title-wrap" style="margin-bottom: 1.75rem;">
-          <span class="section-tag">Past Events</span>
-          <h2 id="event-highlights-title" class="section-title">Event Highlights</h2>
-          <p class="section-desc">Dates, locations, activities, and achievements from RDC, MCNP, and ISAP events.</p>
+          <span class="section-tag">Updates &amp; Happenings</span>
+          <h2 id="event-highlights-title" class="section-title">News &amp; Event Highlights</h2>
+          <p class="section-desc">Dates, locations, activities, breakthroughs, and achievements from RDC, MCNP, and ISAP.</p>
         </div>
 
         <!-- Interactive Event Filter & Search Bar -->
         <div class="event-filter-toolbar">
           <div class="event-filter-pills">
-            <button type="button" class="event-pill-btn active" data-filter="all">All Events (<span id="eventCountTotal">19</span>)</button>
+            <button type="button" class="event-pill-btn active" data-filter="all">All News &amp; Events (<span id="eventCountTotal">19</span>)</button>
             <button type="button" class="event-pill-btn" data-filter="research">Research &amp; Colloquiums</button>
             <button type="button" class="event-pill-btn" data-filter="sdg">SDG Initiatives</button>
             <button type="button" class="event-pill-btn" data-filter="training">Capability Building</button>
@@ -434,7 +430,8 @@
           </div>
           <div class="event-search-wrap">
             <span class="event-search-icon" aria-hidden="true">&#128269;</span>
-            <input type="text" id="eventSearchInput" class="event-search-input" placeholder="Search events, topics, or keywords..." aria-label="Search events">
+            <input type="text" id="eventSearchInput" class="event-search-input" placeholder="Search news, events, topics, or keywords..." aria-label="Search news and events">
+            <button type="button" id="eventSearchClear" class="event-search-clear" aria-label="Clear search">&times;</button>
           </div>
         </div>
 
@@ -643,7 +640,7 @@
     <div class="event-modal" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
       <div class="event-modal-head">
         <button class="event-modal-close" id="eventModalClose" aria-label="Close">&times;</button>
-        <div class="event-modal-breadcrumb">Events &gt; <span id="eventModalCrumb"></span></div>
+        <div class="event-modal-breadcrumb">News &amp; Events &gt; <span id="eventModalCrumb"></span></div>
         <h2 class="event-modal-title" id="eventModalTitle"></h2>
         <div class="event-modal-meta" id="eventModalMeta"></div>
         <div class="event-modal-share">
@@ -667,6 +664,15 @@
         <div class="tab-panel" data-panel="documentation">
           <p style="color:#94a3b8; font-size:0.9rem;">Photo credits, source links, and supporting documents for this event, when available, are noted at the end of the Background section.</p>
         </div>
+      </div>
+
+      <!-- Modal Action & Event Navigation Bar -->
+      <div class="event-modal-actions-bar">
+        <div class="event-modal-nav-group">
+          <button type="button" class="event-modal-nav-btn" id="modalPrevBtn" aria-label="Previous event">&#10094; Previous Event</button>
+          <button type="button" class="event-modal-nav-btn" id="modalNextBtn" aria-label="Next event">Next Event &#10095;</button>
+        </div>
+        <button type="button" class="event-modal-copy-btn" id="modalCopyBtn" aria-label="Copy direct event link">&#128203; Copy Event Link</button>
       </div>
 
       <div class="event-modal-related">
@@ -727,7 +733,17 @@
     var cards = Array.prototype.slice.call(document.querySelectorAll('#eventsGrid .news-card, .news-grid .news-card'));
     var events = cards.map(parseEvent);
 
-    // Decorate cards with SDG badges and categorizations
+    // Category icons mapping
+    var CAT_ICONS = {
+      research: '🔬',
+      sdg: '🌱',
+      training: '💡',
+      student: '🏆'
+    };
+
+    var catCounts = { all: cards.length, research: 0, sdg: 0, training: 0, student: 0 };
+
+    // Decorate cards with reading meta, SDG badges, and categorizations
     cards.forEach(function (card, index) {
       var ev = events[index];
       var text = (card.textContent || '').toLowerCase();
@@ -741,8 +757,26 @@
       card.dataset.categories = cats.join(' ');
       card.dataset.searchText = (ev.title + ' ' + ev.date + ' ' + ev.category + ' ' + text).toLowerCase();
 
+      cats.forEach(function (c) {
+        if (catCounts[c] !== undefined && c !== 'all') catCounts[c]++;
+      });
+
       var content = card.querySelector('.news-content > div');
       if (content) {
+        // Add reading time and category icon
+        if (!content.querySelector('.card-read-meta')) {
+          var wordCount = (card.textContent || '').trim().split(/\s+/).length;
+          var readMins = Math.max(1, Math.round(wordCount / 140));
+          var primaryCat = cats.filter(function (c) { return c !== 'all'; })[0] || 'research';
+          var icon = CAT_ICONS[primaryCat] || '📌';
+
+          var readMeta = document.createElement('div');
+          readMeta.className = 'card-read-meta';
+          readMeta.style.cssText = 'font-size: 0.74rem; color: #64748b; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;';
+          readMeta.innerHTML = '<span>' + icon + '</span> <span>⏱️ ' + readMins + ' min read</span>' + (ev.date ? '<span>• 🗓️ ' + ev.date + '</span>' : '');
+          content.insertBefore(readMeta, content.firstChild);
+        }
+
         // Add card SDG chip strip if event supports SDGs
         if (ev.sdgs && ev.sdgs.length && !card.querySelector('.card-sdg-strip')) {
           var strip = document.createElement('div');
@@ -772,6 +806,9 @@
     var imagesEl = document.getElementById('eventModalImages');
     var relatedEl = document.getElementById('eventModalRelated');
     var closeBtn = document.getElementById('eventModalClose');
+    var modalPrevBtn = document.getElementById('modalPrevBtn');
+    var modalNextBtn = document.getElementById('modalNextBtn');
+    var modalCopyBtn = document.getElementById('modalCopyBtn');
 
     function renderSdgs(sdgs) {
       sdgsEl.innerHTML = '';
@@ -789,7 +826,6 @@
     function renderRelated(currentIndex) {
       relatedEl.innerHTML = '';
       var pool = events.filter(function (e, i) { return i !== currentIndex; });
-      // Prefer related events that share at least one SDG
       var current = events[currentIndex];
       pool.sort(function (a, b) {
         var aScore = a.sdgs.filter(function (n) { return current.sdgs.indexOf(n) !== -1; }).length;
@@ -804,6 +840,11 @@
         card.addEventListener('click', function () { openModal(idx); });
         relatedEl.appendChild(card);
       });
+    }
+
+    function updateModalNav(index) {
+      if (modalPrevBtn) modalPrevBtn.disabled = (index <= 0);
+      if (modalNextBtn) modalNextBtn.disabled = (index >= events.length - 1);
     }
 
     function openModal(index) {
@@ -860,9 +901,10 @@
 
       // Reset to Background tab
       overlay.querySelectorAll('.tab-btn').forEach(function (b, i) { b.classList.toggle('active', i === 0); });
-      overlay.querySelectorAll('.tab-panel').forEach(function (p, i) { p.classList.toggle('active', i === 0); });
+      overlay.querySelectorAll('.tab-panel').forEach(function (p, i) { p.classList.toggle('active', p.dataset.panel === tab || i === 0); });
 
       renderRelated(index);
+      updateModalNav(index);
 
       overlay.classList.add('open');
       overlay.dataset.currentIndex = index;
@@ -881,7 +923,43 @@
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+      if (overlay.classList.contains('open')) {
+        var curr = parseInt(overlay.dataset.currentIndex || '0', 10);
+        if (e.key === 'ArrowLeft' && curr > 0) openModal(curr - 1);
+        if (e.key === 'ArrowRight' && curr < events.length - 1) openModal(curr + 1);
+      }
     });
+
+    if (modalPrevBtn) {
+      modalPrevBtn.addEventListener('click', function () {
+        var curr = parseInt(overlay.dataset.currentIndex || '0', 10);
+        if (curr > 0) openModal(curr - 1);
+      });
+    }
+
+    if (modalNextBtn) {
+      modalNextBtn.addEventListener('click', function () {
+        var curr = parseInt(overlay.dataset.currentIndex || '0', 10);
+        if (curr < events.length - 1) openModal(curr + 1);
+      });
+    }
+
+    if (modalCopyBtn) {
+      modalCopyBtn.addEventListener('click', function () {
+        var curr = parseInt(overlay.dataset.currentIndex || '0', 10);
+        var ev = events[curr];
+        if (ev) {
+          var url = window.location.origin + window.location.pathname + '#' + ev.id;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function () {
+              if (window.showToast) window.showToast('Event link copied to clipboard!');
+            });
+          } else {
+            if (window.showToast) window.showToast('Link: ' + url, 'info');
+          }
+        }
+      });
+    }
 
     overlay.querySelectorAll('.tab-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -894,10 +972,25 @@
     // Interactive Category Filter and Real-Time Search
     var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.event-pill-btn'));
     var searchInput = document.getElementById('eventSearchInput');
+    var searchClearBtn = document.getElementById('eventSearchClear');
     var countTotal = document.getElementById('eventCountTotal');
     var eventsGrid = document.getElementById('eventsGrid');
 
-    if (countTotal) countTotal.textContent = cards.length;
+    // Populate dynamic counts on filter buttons
+    filterBtns.forEach(function (btn) {
+      var f = btn.dataset.filter;
+      if (f && catCounts[f] !== undefined) {
+        var labelMap = {
+          all: 'All News & Events',
+          research: 'Research & Colloquiums',
+          sdg: 'SDG Initiatives',
+          training: 'Capability Building',
+          student: 'Student Competitions'
+        };
+        var label = labelMap[f] || f;
+        btn.innerHTML = label + ' (' + (f === 'all' ? '<span id="eventCountTotal">' + catCounts.all + '</span>' : catCounts[f]) + ')';
+      }
+    });
 
     var activeCategory = 'all';
     var searchQuery = '';
@@ -919,13 +1012,14 @@
         }
       });
 
-      if (countTotal) countTotal.textContent = visibleCount;
+      var countEl = document.getElementById('eventCountTotal');
+      if (countEl) countEl.textContent = visibleCount;
 
       if (visibleCount === 0) {
         if (!noResultsEl && eventsGrid) {
           noResultsEl = document.createElement('div');
           noResultsEl.className = 'event-no-results';
-          noResultsEl.innerHTML = '<h4>No events found</h4><p>Try searching for a different keyword, topic, or selecting "All Events".</p>';
+          noResultsEl.innerHTML = '<h4>No matching news or events found</h4><p>Try clearing your search keyword or selecting "All News &amp; Events".</p>';
           eventsGrid.appendChild(noResultsEl);
         }
       } else if (noResultsEl) {
@@ -945,20 +1039,46 @@
     if (searchInput) {
       searchInput.addEventListener('input', function () {
         searchQuery = (searchInput.value || '').trim().toLowerCase();
+        if (searchClearBtn) searchClearBtn.classList.toggle('visible', !!searchQuery);
         applyFilterAndSearch();
+      });
+    }
+
+    if (searchClearBtn && searchInput) {
+      searchClearBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        searchQuery = '';
+        searchClearBtn.classList.remove('visible');
+        applyFilterAndSearch();
+        searchInput.focus();
       });
     }
 
     cards.forEach(function (card, index) {
       card.addEventListener('click', function (e) {
-        // Don't hijack native interactions: the "Read full story" toggle,
-        // gallery slider controls, and outbound links keep their own behavior.
         if (e.target.closest('summary')) return;
         if (e.target.closest('.event-gallery-slider')) return;
+        if (e.target.closest('.event-gallery-thumbstrip')) return;
         if (e.target.tagName === 'A' || e.target.closest('a')) return;
         openModal(index);
       });
     });
+
+    // Deep-link hash scrolling and highlighting
+    if (window.location.hash) {
+      var target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(function () {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.style.outline = '3px solid var(--mcnp-green, #0d5c3a)';
+          target.style.boxShadow = '0 0 25px rgba(13, 92, 58, 0.35)';
+          setTimeout(function () {
+            target.style.outline = '';
+            target.style.boxShadow = '';
+          }, 3200);
+        }, 350);
+      }
+    }
   })();
   </script>
 

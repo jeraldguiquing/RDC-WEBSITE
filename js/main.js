@@ -116,7 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach((link) => {
     const href = link.getAttribute('href');
-    if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+    if (
+      href &&
+      (href === currentPath ||
+        (currentPath === '' && href === 'index.html') ||
+        (currentPath === 'news.html' && href === 'news-events.html'))
+    ) {
       link.classList.add('active');
       // If it's a dropdown link, highlight the parent nav-link too
       const parentDropdown = link.closest('.nav-item.dropdown');
