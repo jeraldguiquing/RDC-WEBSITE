@@ -45,8 +45,8 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ rdc@mcnp-isap.edu.ph</span>
-        <span>📖 Journal of Admin — Digital FlipBook Repository</span>
+        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
         <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" style="color: #cbd5e1; font-size: 0.78rem;">MCNP Journal ↗</a>
@@ -141,11 +141,16 @@
                   <span>• ISAP Admin Research Journal ↗</span>
                   <span class="dropdown-badge badge-admin">Issue 2</span>
                 </a>
+                <a href="https://online.fliphtml5.com/babtz/jtyd/#p=1" target="_blank" rel="noopener noreferrer" class="dropdown-link" style="font-size: 0.82rem; color: #b89726;">
+                  <span>• ISAP Faculty Research Journal ↗</span>
+                  <span class="dropdown-badge badge-admin">Issue 3</span>
+                </a>
               </div>
             </li>
 
-            <li class="nav-item">
-              <a href="news-events.html" class="nav-link">NEWS AND EVENT</a>
+            <li class="nav-item dropdown">
+              <a href="news.html" class="nav-link">NEWS <span class="arrow">&#9662;</span></a>
+              <div class="dropdown-menu"><a href="news.html" class="dropdown-link"><span>News</span></a><a href="news-events.html" class="dropdown-link"><span>Events</span></a></div>
             </li>
 
             <li class="nav-item">
@@ -186,7 +191,7 @@
           <div>
             <span class="dropdown-badge badge-admin" style="font-size: 0.8rem; padding: 0.35rem 0.8rem;">INTERACTIVE DIGITAL FLIPBOOKS</span>
             <h2 id="currentJournalTitle" style="font-size: 1.45rem; color: #1e293b; margin-top: 0.4rem;">
-              Faculty Research Journal
+              MCNP ISAP-ISAP Administrative and Faculty Research Journal
             </h2>
             <p id="currentJournalSubtitle" style="font-size: 0.88rem; color: var(--muted-text);">
               FlipHTML5 Edition • MCNP-ISAP Research &amp; Development Center
@@ -204,11 +209,15 @@
         <div class="flipbook-tabs">
           <button id="tabIssue1" class="flipbook-tab-btn active" onclick="switchFlipbook('issue1')">
             <span>📖</span>
-            <span>Issue 1: Faculty Research Journal</span>
+            <span>Issue 1: MCNP Faculty Research Journal</span>
           </button>
           <button id="tabIssue2" class="flipbook-tab-btn" onclick="switchFlipbook('issue2')">
             <span>📘</span>
-            <span>Issue 2: ISAP Admin Research Journal</span>
+            <span>Issue 2: Admin Research Journal</span>
+          </button>
+          <button id="tabIssue3" class="flipbook-tab-btn" onclick="switchFlipbook('issue3')">
+            <span>📙</span>
+            <span>Issue 3: ISAP Faculty Research Journal</span>
           </button>
         </div>
 
@@ -299,6 +308,14 @@
               </div>
               <a href="https://online.fliphtml5.com/babtz/mrnq/#p=1" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-isap">Open FlipBook ↗</a>
             </div>
+
+            <div style="background: #f8fafc; padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--isap-blue); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div>
+                <strong style="color: var(--isap-blue);">3. ISAP Faculty Research Journal</strong>
+                <p style="font-size: 0.86rem; color: #64748b;">Faculty research and scholarly contributions from the International School of Asia and the Pacific.</p>
+              </div>
+              <a href="https://online.fliphtml5.com/babtz/jtyd/#p=1" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-isap">Open FlipBook ↗</a>
+            </div>
           </div>
         </div>
 
@@ -351,12 +368,13 @@
             <li><a href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">&rarr; ISAP DAWA (dawa.isap.edu.ph) ↗</a></li>
             <li><a href="https://online.fliphtml5.com/ffqhu/swzy/#p=1" target="_blank" rel="noopener noreferrer">&rarr; Faculty Research Journal ↗</a></li>
             <li><a href="https://online.fliphtml5.com/babtz/mrnq/#p=1" target="_blank" rel="noopener noreferrer">&rarr; ISAP Admin Research Journal ↗</a></li>
+            <li><a href="https://online.fliphtml5.com/babtz/jtyd/#p=1" target="_blank" rel="noopener noreferrer">&rarr; ISAP Faculty Research Journal ↗</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">rdc@mcnp-isap.edu.ph | (078) 304-1010</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>
@@ -378,6 +396,11 @@
         title: "ISAP Admin Research Journal",
         subtitle: "FlipHTML5 Edition • International School of Asia and the Pacific",
         url: "https://online.fliphtml5.com/babtz/mrnq/#p=1"
+      },
+      issue3: {
+        title: "ISAP Faculty Research Journal",
+        subtitle: "FlipHTML5 Edition • International School of Asia and the Pacific",
+        url: "https://online.fliphtml5.com/babtz/jtyd/#p=1"
       }
     };
 
@@ -393,6 +416,7 @@
 
       document.getElementById('tabIssue1').classList.toggle('active', issueKey === 'issue1');
       document.getElementById('tabIssue2').classList.toggle('active', issueKey === 'issue2');
+      document.getElementById('tabIssue3').classList.toggle('active', issueKey === 'issue3');
     }
   </script>
 </body>

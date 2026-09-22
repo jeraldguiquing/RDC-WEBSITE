@@ -13,11 +13,10 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ rdc@mcnp-isap.edu.ph</span>
-        <span>📞 (078) 304-1010</span>
+        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
-        <span class="badge-pill">RDC Secretariat &amp; Inquiries</span>
         <a href="journal-admin.html" style="color: #ffdf70; font-weight: 600; text-decoration: underline; font-size: 0.78rem;">Journal of Admin</a>
       </div>
     </div>
@@ -106,8 +105,9 @@
               </div>
             </li>
 
-            <li class="nav-item">
-              <a href="news-events.html" class="nav-link">NEWS AND EVENT</a>
+            <li class="nav-item dropdown">
+              <a href="news.html" class="nav-link">NEWS <span class="arrow">&#9662;</span></a>
+              <div class="dropdown-menu"><a href="news.html" class="dropdown-link"><span>News</span></a><a href="news-events.html" class="dropdown-link"><span>Events</span></a></div>
             </li>
 
             <li class="nav-item">
@@ -140,7 +140,7 @@
   <!-- Main Content -->
   <main class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start;">
+      <div class="contact-grid">
         <!-- Contact Form -->
         <div>
           <span class="section-tag">Direct Inquiries</span>
@@ -196,53 +196,38 @@
                 <textarea class="form-control" placeholder="Please provide details regarding your study, protocol, or inquiry..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry to RDC Secretariat</button>
+              <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry to RDC</button>
             </form>
           </div>
         </div>
 
-        <!-- Secretariat Directory & Location -->
+        <!-- Right Column: Campus Info + Map -->
         <div>
-          <div style="background: var(--white); border-radius: 14px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); margin-bottom: 2rem;">
-            <h3 style="color: var(--mcnp-green); margin-bottom: 1.25rem; font-size: 1.3rem;">RDC Secretariat Offices</h3>
-            
-            <div style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.9rem;">
-              <div>
-                <strong>Office of the RDC Director:</strong>
-                <p style="color: #64748b; margin: 0.2rem 0;">Administration Building, 2nd Floor, Alimannao Hills Campus</p>
-                <span style="color: var(--mcnp-green); font-size: 0.85rem; font-weight: 600;">rdc.director@mcnp-isap.edu.ph</span>
-              </div>
-
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-                <strong>Institutional Ethics Review Committee (IERC):</strong>
-                <p style="color: #64748b; margin: 0.2rem 0;">Room 204, Medical Sciences Complex (MCNP Wing)</p>
-                <span style="color: var(--mcnp-green); font-size: 0.85rem; font-weight: 600;">ethics.ierc@mcnp-isap.edu.ph</span>
-              </div>
-
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-                <strong>Editorial Offices (MCNP &amp; ISAP Journals):</strong>
-                <p style="color: #64748b; margin: 0.2rem 0;">Publication Office, Library Complex, 3rd Floor</p>
-                <span style="color: var(--isap-blue); font-size: 0.85rem; font-weight: 600;">journals@mcnp-isap.edu.ph</span>
-              </div>
-
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-                <strong>SDG Community Outreach Desk:</strong>
-                <p style="color: #64748b; margin: 0.2rem 0;">Community Extension Office, Ground Floor</p>
-                <span style="color: #926f0d; font-size: 0.85rem; font-weight: 600;">adg.advocacy@mcnp-isap.edu.ph</span>
-              </div>
+          <div class="campus-card">
+            <h4>🏛️ Visiting the Campus</h4>
+            <p>
+              The MCNP and ISAP twin campuses are located along the national highway atop scenic <strong>Alimannao Hills, Peñablanca, Cagayan</strong>, just 10 minutes east of Tuguegarao City proper.
+            </p>
+            <div class="info-box">
+              <div class="info-box-item">🕒 <strong>Office Hours:</strong> Monday – Friday, 8:00 AM – 5:00 PM</div>
+              <div class="info-box-item">📞 <strong>Mobile:</strong> +639989847781</div>
+              <div class="info-box-item">✉️ <strong>Email:</strong> researchoffice@mcnp.edu.ph</div>
+              <div class="info-box-item">📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61593412015654" target="_blank" rel="noopener noreferrer">MCNP &amp; ISAP RDC Facebook Page</a></div>
             </div>
           </div>
 
-          <!-- Campus Directions Card -->
-          <div style="background: linear-gradient(135deg, var(--mcnp-green-dark), var(--isap-blue-dark)); border-radius: 14px; padding: 2rem; color: #fff;">
-            <h4 style="color: var(--gold); margin-bottom: 0.75rem; font-size: 1.15rem;">Visiting the Campus</h4>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: #e2e8f0; margin-bottom: 1rem;">
-              The MCNP and ISAP twin campuses are located along the national highway atop scenic <strong>Alimannao Hills, Peñablanca, Cagayan</strong>, just 10 minutes east of Tuguegarao City proper.
-            </p>
-            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem; font-size: 0.84rem; color: #f1f5f9;">
-              <div>🕒 <strong>Office Hours:</strong> Monday – Friday, 8:00 AM – 5:00 PM</div>
-              <div style="margin-top: 0.35rem;">📞 <strong>Trunkline:</strong> (078) 304-1010 / 304-2020</div>
-            </div>
+          <div class="map-card">
+            <div class="map-card-label">Campus Location</div>
+            <iframe
+              src="https://www.google.com/maps?q=Medical%20Colleges%20of%20Northern%20Philippines,%20Alimannao,%20Pe%C3%B1ablanca,%20Cagayan&output=embed"
+              width="100%"
+              height="260"
+              style="border:0; border-radius: 10px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="MCNP and ISAP RDC location map">
+            </iframe>
           </div>
         </div>
       </div>
@@ -279,7 +264,8 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">rdc@mcnp-isap.edu.ph | (078) 304-1010</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.6rem;"><a href="https://www.facebook.com/profile.php?id=61593412015654" target="_blank" rel="noopener noreferrer" style="color: #ffdf70; text-decoration: underline;">Facebook Page ↗</a></p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>
@@ -292,4 +278,3 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-

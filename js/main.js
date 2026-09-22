@@ -3,17 +3,84 @@
  * JavaScript Core Interactivity
  */
 
+// Keep inline toast actions available on pages that use onclick handlers.
+window.showToast = function (message, type = 'success') {
+  const colors = {
+    success: '#0d5c3a',
+    info: '#0b3c5d',
+    error: '#e11d48'
+  };
+  const toast = document.createElement('div');
+  toast.className = 'rdc-toast';
+  toast.textContent = message;
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    z-index: 9999;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: ${colors[type] || colors.info};
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transform: translate(-50%, 20px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  `;
+  document.querySelector('.rdc-toast')?.remove();
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+    toast.style.transform = 'translate(-50%, 0)';
+  });
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translate(-50%, 20px)';
+    setTimeout(() => toast.remove(), 300);
+  }, 3200);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Menu Navigation Toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
 
   if (mobileToggle && navMenu) {
+    navMenu.id ||= 'primary-navigation';
+    mobileToggle.setAttribute('aria-controls', navMenu.id);
+    mobileToggle.setAttribute('aria-expanded', 'false');
+
+    const closeMobileNav = () => {
+      navMenu.classList.remove('active');
+      document.body.classList.remove('nav-open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.innerHTML = '&#9776;';
+    };
+
     mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       const isExpanded = navMenu.classList.contains('active');
+      document.body.classList.toggle('nav-open', isExpanded);
       mobileToggle.setAttribute('aria-expanded', isExpanded);
       mobileToggle.innerHTML = isExpanded ? '&#10005;' : '&#9776;';
+    });
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth > 860 || !link.closest('.dropdown > .nav-link')) closeMobileNav();
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMobileNav();
+        mobileToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) closeMobileNav();
     });
   }
 
@@ -23,16 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
   dropdownItems.forEach((item) => {
     const link = item.querySelector('.nav-link');
     if (link) {
+      link.setAttribute('aria-expanded', 'false');
       link.addEventListener('click', (e) => {
         // If on small screens, toggle dropdown open/close
         if (window.innerWidth <= 860) {
           e.preventDefault();
           item.classList.toggle('open');
+          link.setAttribute('aria-expanded', item.classList.contains('open'));
           
           // Close other open dropdowns
           dropdownItems.forEach((other) => {
             if (other !== item) {
               other.classList.remove('open');
+              other.querySelector('.nav-link')?.setAttribute('aria-expanded', 'false');
             }
           });
         }
@@ -159,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 7. Toast Notification Utility
-  window.showToast = function (message, type = 'success') {
+  const legacyShowToast = function (message, type = 'success') {
     let toastContainer = document.querySelector('.toast-container');
     if (!toastContainer) {
       toastContainer = document.createElement('div');
@@ -209,19 +279,243 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   };
 
+  const sharedEventGallery = Array.from({ length: 11 }, (_, photoIndex) => `
+    <div class="event-gallery-slide${photoIndex === 0 ? ' active' : ''}">
+      <img src="upload/${photoIndex + 1}.jpg" alt="Event photo ${photoIndex + 1}">
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.news-grid .news-card[data-has-gallery="true"]').forEach((card) => {
+    if (card.querySelector('[data-gallery-slider]')) return;
+
+    const galleryMarkup = `
+      <div class="event-gallery-slider" data-gallery-slider aria-label="Event photo slider">
+        <button class="event-gallery-control prev" type="button" data-gallery-prev aria-label="Previous event photo">&#8249;</button>
+        ${sharedEventGallery}
+        <button class="event-gallery-control next" type="button" data-gallery-next aria-label="Next event photo">&#8250;</button>
+        <button class="event-gallery-fullscreen" type="button" data-gallery-fullscreen aria-label="Open gallery fullscreen" title="Open gallery fullscreen">&#9974;</button>
+      </div>
+    `;
+    const content = card.querySelector('.news-content > div');
+    const details = content?.querySelector('details');
+    if (details) {
+      details.insertAdjacentHTML('beforebegin', galleryMarkup);
+    } else {
+      content?.insertAdjacentHTML('beforeend', galleryMarkup);
+    }
+  });
+
+  // ===== Global Image Lightbox Modal =====
+  let lightboxEl = document.querySelector('.rdc-lightbox-overlay');
+  if (!lightboxEl) {
+    lightboxEl = document.createElement('div');
+    lightboxEl.className = 'rdc-lightbox-overlay';
+    lightboxEl.setAttribute('role', 'dialog');
+    lightboxEl.setAttribute('aria-modal', 'true');
+    lightboxEl.setAttribute('aria-label', 'Image preview');
+    lightboxEl.innerHTML = `
+      <div class="rdc-lightbox-header">
+        <span class="rdc-lightbox-counter" id="rdcLightboxCounter">1 / 1 Photos</span>
+        <button class="rdc-lightbox-close" id="rdcLightboxClose" type="button" aria-label="Close image preview">&times;</button>
+      </div>
+      <button class="rdc-lightbox-nav prev" id="rdcLightboxPrev" type="button" aria-label="Previous image">&#10094;</button>
+      <div class="rdc-lightbox-content">
+        <img src="" alt="" class="rdc-lightbox-img" id="rdcLightboxImg">
+      </div>
+      <button class="rdc-lightbox-nav next" id="rdcLightboxNext" type="button" aria-label="Next image">&#10095;</button>
+    `;
+    document.body.appendChild(lightboxEl);
+  }
+
+  let lightboxImages = [];
+  let lightboxIndex = 0;
+  const lbImg = document.getElementById('rdcLightboxImg');
+  const lbCounter = document.getElementById('rdcLightboxCounter');
+  const lbClose = document.getElementById('rdcLightboxClose');
+  const lbPrev = document.getElementById('rdcLightboxPrev');
+  const lbNext = document.getElementById('rdcLightboxNext');
+
+  const updateLightbox = () => {
+    if (!lightboxImages.length) return;
+    const item = lightboxImages[lightboxIndex];
+    lbImg.src = typeof item === 'string' ? item : item.src;
+    lbImg.alt = typeof item === 'string' ? 'Enlarged photo' : (item.alt || 'Enlarged photo');
+    lbCounter.textContent = `${lightboxIndex + 1} / ${lightboxImages.length} Photos`;
+    if (lightboxImages.length <= 1) {
+      lbPrev.style.display = 'none';
+      lbNext.style.display = 'none';
+    } else {
+      lbPrev.style.display = 'flex';
+      lbNext.style.display = 'flex';
+    }
+  };
+
+  window.openLightbox = function (items, startIndex = 0) {
+    if (!items || !items.length) return;
+    lightboxImages = items;
+    lightboxIndex = (startIndex + items.length) % items.length;
+    updateLightbox();
+    lightboxEl.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightboxEl.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  lbClose?.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+  lbPrev?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    updateLightbox();
+  });
+  lbNext?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+    updateLightbox();
+  });
+  lightboxEl?.addEventListener('click', (e) => {
+    if (e.target === lightboxEl || e.target.classList.contains('rdc-lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightboxEl.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft' && lightboxImages.length > 1) {
+      lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+      updateLightbox();
+    }
+    if (e.key === 'ArrowRight' && lightboxImages.length > 1) {
+      lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+      updateLightbox();
+    }
+  });
+
+  // ===== Interactive Photo Gallery Sliders =====
   document.querySelectorAll('[data-gallery-slider]').forEach((slider) => {
-    const slides = slider.querySelectorAll('.event-gallery-slide');
+    const slides = Array.from(slider.querySelectorAll('.event-gallery-slide'));
+    if (!slides.length) return;
     let currentSlide = 0;
+    const counterEl = slider.querySelector('.event-gallery-counter');
+    const prevBtn = slider.querySelector('[data-gallery-prev]');
+    const nextBtn = slider.querySelector('[data-gallery-next]');
+    const fullscreenButton = slider.querySelector('[data-gallery-fullscreen]');
+
+    // Extract image metadata
+    const imgList = slides.map((slide, idx) => {
+      const img = slide.querySelector('img');
+      return {
+        src: img ? img.getAttribute('src') : '',
+        alt: img ? (img.getAttribute('alt') || `Event photo ${idx + 1}`) : `Event photo ${idx + 1}`
+      };
+    });
+
+    // Auto-generate horizontal thumbnail strip if more than 1 photo exists
+    let thumbstrip = slider.nextElementSibling?.classList.contains('event-gallery-thumbstrip')
+      ? slider.nextElementSibling
+      : null;
+
+    if (!thumbstrip && slides.length > 1) {
+      thumbstrip = document.createElement('div');
+      thumbstrip.className = 'event-gallery-thumbstrip';
+      thumbstrip.setAttribute('aria-label', 'Photo thumbnails');
+      thumbstrip.innerHTML = imgList.map((img, idx) => `
+        <button class="event-gallery-thumb${idx === 0 ? ' active' : ''}" type="button" data-thumb-idx="${idx}" aria-label="Jump to photo ${idx + 1}">
+          <img src="${img.src}" alt="Thumbnail ${idx + 1}" loading="lazy">
+        </button>
+      `).join('');
+      slider.insertAdjacentElement('afterend', thumbstrip);
+
+      thumbstrip.querySelectorAll('.event-gallery-thumb').forEach((thumb) => {
+        thumb.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetIdx = parseInt(thumb.getAttribute('data-thumb-idx'), 10);
+          showSlide(targetIdx);
+        });
+      });
+    }
 
     const showSlide = (index) => {
       currentSlide = (index + slides.length) % slides.length;
       slides.forEach((slide, slideIndex) => {
         slide.classList.toggle('active', slideIndex === currentSlide);
       });
+      if (counterEl) {
+        counterEl.textContent = `${currentSlide + 1} / ${slides.length} Photos`;
+      }
+      if (thumbstrip) {
+        const thumbs = thumbstrip.querySelectorAll('.event-gallery-thumb');
+        thumbs.forEach((thumb, tIdx) => {
+          thumb.classList.toggle('active', tIdx === currentSlide);
+        });
+        const activeThumb = thumbs[currentSlide];
+        if (activeThumb) {
+          activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
     };
 
-    slider.querySelector('[data-gallery-prev]').addEventListener('click', () => showSlide(currentSlide - 1));
-    slider.querySelector('[data-gallery-next]').addEventListener('click', () => showSlide(currentSlide + 1));
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showSlide(currentSlide - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showSlide(currentSlide + 1);
+      });
+    }
+
+    // Clicking slide opens full-screen Lightbox
+    slides.forEach((slide, sIdx) => {
+      slide.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (window.openLightbox) {
+          window.openLightbox(imgList, sIdx);
+        }
+      });
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) showSlide(currentSlide + 1);
+        else showSlide(currentSlide - 1);
+      }
+    }, { passive: true });
+
+    if (fullscreenButton) {
+      const updateFullscreenLabel = () => {
+        const isFullscreen = document.fullscreenElement === slider;
+        fullscreenButton.textContent = isFullscreen ? '\u2716' : '\u26f6';
+        fullscreenButton.setAttribute('aria-label', isFullscreen ? 'Exit gallery fullscreen' : 'Open gallery fullscreen');
+        fullscreenButton.title = isFullscreen ? 'Exit gallery fullscreen' : 'Open gallery fullscreen';
+      };
+
+      fullscreenButton.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        if (document.fullscreenElement === slider) {
+          await document.exitFullscreen();
+        } else if (slider.requestFullscreen) {
+          await slider.requestFullscreen();
+        }
+        updateFullscreenLabel();
+      });
+
+      document.addEventListener('fullscreenchange', updateFullscreenLabel);
+    }
   });
 
   const sdgDetails = {
@@ -279,9 +573,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalGallery = sdgModal.querySelector('[data-sdg-modal-gallery]');
     const modalLink = sdgModal.querySelector('[data-sdg-modal-link]');
     const modalEvents = sdgModal.querySelector('[data-sdg-modal-events]');
+    let currentSlide = 0;
+    let currentImages = [];
+
+    const renderModalGallery = (goalNumber) => {
+      currentImages = [`assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-${String(goalNumber).padStart(2, '0')}.png`];
+      currentSlide = 0;
+
+      modalGallery.innerHTML = `
+        <div class="sdg-card-slider" aria-live="polite">
+          <div class="sdg-slider-track">
+            ${currentImages.map((src, index) => `
+              <div class="sdg-slider-slide ${index === 0 ? 'active' : ''}" data-sdg-slide-index="${index}">
+                <img src="${src}" alt="SDG ${goalNumber} icon">
+              </div>
+            `).join('')}
+          </div>
+          ${currentImages.length > 1 ? `
+            <button class="sdg-slider-arrow sdg-slider-prev" type="button" aria-label="Previous image">&#10094;</button>
+            <button class="sdg-slider-arrow sdg-slider-next" type="button" aria-label="Next image">&#10095;</button>
+            <div class="sdg-slider-dots">
+              ${currentImages.map((_, index) => `
+                <button class="sdg-slider-dot ${index === 0 ? 'active' : ''}" type="button" data-sdg-dot-index="${index}" aria-label="Go to image ${index + 1}"></button>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      if (currentImages.length > 1) {
+        modalGallery.querySelector('.sdg-slider-prev')?.addEventListener('click', () => goToSlide(currentSlide - 1));
+        modalGallery.querySelector('.sdg-slider-next')?.addEventListener('click', () => goToSlide(currentSlide + 1));
+        modalGallery.querySelectorAll('.sdg-slider-dot').forEach((dot) => {
+          dot.addEventListener('click', () => goToSlide(Number(dot.getAttribute('data-sdg-dot-index'))));
+        });
+      }
+    };
+
+    const goToSlide = (index) => {
+      if (!currentImages.length) return;
+      currentSlide = (index + currentImages.length) % currentImages.length;
+      modalGallery.querySelectorAll('[data-sdg-slide-index]').forEach((slide) => {
+        slide.classList.toggle('active', Number(slide.getAttribute('data-sdg-slide-index')) === currentSlide);
+      });
+      modalGallery.querySelectorAll('.sdg-slider-dot').forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === currentSlide);
+      });
+    };
+
     const closeModal = () => {
       sdgModal.classList.remove('active');
       document.body.style.overflow = '';
+      currentSlide = 0;
     };
 
     document.querySelectorAll('[data-sdg-card]').forEach((card) => {
@@ -290,12 +633,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const goal = card.getAttribute('data-goal');
         const detail = sdgDetails[goal];
-        const imageClone = card.querySelector('.sdg-card-static-image')?.cloneNode(true);
 
-        modalGallery.innerHTML = '';
-        if (imageClone) {
-          modalGallery.appendChild(imageClone);
-        }
+        renderModalGallery(goal);
 
         modalLink.textContent = detail[0];
         modalEvents.innerHTML = detail[1].map(([eventTitle, description]) => `
@@ -316,6 +655,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && sdgModal.classList.contains('active')) closeModal();
+      if (sdgModal.classList.contains('active') && event.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+      if (sdgModal.classList.contains('active') && event.key === 'ArrowRight') goToSlide(currentSlide + 1);
     });
   }
 
@@ -329,3 +670,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// 9. SDG Interactive Showcase Filter
+window.filterSDG = function (type, btn) {
+  document.querySelectorAll('.sdg-filter-btn').forEach((b) => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  const cards = document.querySelectorAll('.sdg-goal-card:not(.sdg-goal-cta), .sdg-tile');
+  cards.forEach((card) => {
+    const count = parseInt(card.getAttribute('data-events') || '0', 10);
+    if (type === 'active') {
+      if (count === 0) {
+        card.classList.add('dimmed');
+      } else {
+        card.classList.remove('dimmed');
+      }
+    } else {
+      card.classList.remove('dimmed');
+    }
+  });
+};

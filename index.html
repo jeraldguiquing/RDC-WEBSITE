@@ -6,6 +6,11 @@
   <title>RDC | Research &amp; Development Center - MCNP &amp; ISAP</title>
   <meta name="description" content="Official Research and Development Center (RDC) of Medical Colleges of Northern Philippines (MCNP) and International School of Asia and the Pacific (ISAP).">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    a.sdg-goal-card:not(.sdg-goal-cta){text-decoration:none}
+    .sdg-goal-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .sdg-goal-events{display:block;width:100%;text-align:center}
+  </style>
 </head>
 <body>
 
@@ -14,11 +19,10 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice@mcnp.edu.ph</span>
-        <span>📞 (+63) 998 984 7781</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
+        <span>📞 <a href="tel:+639989847781" style="color:inherit">(+63) 998 984 7781</a></span>
       </div>
       <div class="topbar-right">
-        <span class="badge-pill">Twin Institutions of Academic Excellence</span>
         <a href="journal-admin.html" style="color: #ffdf70; font-weight: 600; text-decoration: underline; font-size: 0.78rem;">Journal of Admin</a>
       </div>
     </div>
@@ -28,7 +32,6 @@
   <header class="main-header">
     <div class="container">
       <div class="header-inner">
-        <!-- Brand / Logos -->
         <a href="index.html" class="brand-wrapper">
           <div class="brand-logos">
             <img class="brand-header-image" src="assets/MCNP%20.%20ISAP%20FB%20PROFILE%20copy.png" alt="MCNP and ISAP" title="Medical Colleges of Northern Philippines and International School of Asia and the Pacific">
@@ -39,15 +42,12 @@
           </div>
         </a>
 
-        <!-- Desktop & Mobile Navigation Menu -->
         <nav class="main-nav" aria-label="Main Navigation">
           <ul class="nav-menu">
-            <!-- 1. HOME -->
             <li class="nav-item">
               <a href="index.html" class="nav-link active">HOME</a>
             </li>
 
-            <!-- 2. ABOUT INSTITUTION (Dropdown: MCNP, ISAP) -->
             <li class="nav-item dropdown">
               <a href="about-mcnp.html" class="nav-link">
                 ABOUT INSTITUTION <span class="arrow">&#9662;</span>
@@ -64,7 +64,6 @@
               </div>
             </li>
 
-            <!-- 3. ABOUT RDC (Dropdown: MCNP, ISAP) -->
             <li class="nav-item dropdown">
               <a href="about-rdc-mcnp.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
@@ -81,12 +80,10 @@
               </div>
             </li>
 
-            <!-- 4. RDC AGENDA -->
             <li class="nav-item">
               <a href="rdc-agenda.html" class="nav-link">RDC AGENDA</a>
             </li>
 
-            <!-- 5. JOURNAL (Dropdown: MCNP, ISAP, ADMIN) -->
             <li class="nav-item dropdown">
               <a href="journal-mcnp.html" class="nav-link">
                 JOURNAL <span class="arrow">&#9662;</span>
@@ -111,24 +108,21 @@
               </div>
             </li>
 
-            <!-- 6. NEWS AND EVENT -->
-            <li class="nav-item">
-              <a href="news-events.html" class="nav-link">NEWS AND EVENT</a>
+            <li class="nav-item dropdown">
+              <a href="news.html" class="nav-link">NEWS <span class="arrow">&#9662;</span></a>
+              <div class="dropdown-menu"><a href="news.html" class="dropdown-link"><span>News</span></a><a href="news-events.html" class="dropdown-link"><span>Events</span></a></div>
             </li>
 
-            <!-- 7. SDG ADVOCACIES -->
             <li class="nav-item">
               <a href="adg-advocacy.html" class="nav-link">SDG ADVOCACIES</a>
             </li>
 
-            <!-- 8. CONTACT -->
             <li class="nav-item">
               <a href="contact.html" class="nav-link">CONTACT</a>
             </li>
           </ul>
         </nav>
 
-        <!-- Mobile Menu Toggle Button -->
         <button class="mobile-toggle" aria-label="Toggle Navigation">&#9776;</button>
       </div>
     </div>
@@ -148,21 +142,157 @@
             <a href="rdc-agenda.html" class="btn btn-gold">Explore Research Agenda &rarr;</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Quick Announcements Card -->
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <h3>🔔 RDC Bulletins</h3>
-            <span class="badge-pill">Active</span>
-          </div>
-          <div class="hero-announcement">
-            <div class="announcement-item" style="border-left-color: #38bdf8;">
-              <span class="announcement-date">November 17, 2024</span>
-              <h4>RDC Joins CBCP-UST Collaborative Project</h4>
-              <p>The MCNP-ISAP Research and Development Center participated in a collaborative study on the current status of Catholic Christianity in the Philippines.</p>
-            </div>
+  <section class="sdg-showcase">
+    <div class="container">
+      <div class="sdg-showcase-header">
+        <div class="sdg-showcase-brand">
+          <svg class="sdg-wheel-svg" viewBox="0 0 100 100" width="46" height="46" aria-hidden="true" focusable="false">
+            <path fill="#E5243B" d="M51.01 2.01A48 48 0 0 1 66.40 4.89L57.52 29.32A22 22 0 0 0 50.46 28.00Z"/>
+            <path fill="#DDA63A" d="M68.27 5.61A48 48 0 0 1 81.59 13.86L64.48 33.43A22 22 0 0 0 58.38 29.66Z"/>
+            <path fill="#4C9F38" d="M83.07 15.21A48 48 0 0 1 92.51 27.71L69.48 39.78A22 22 0 0 0 65.16 34.06Z"/>
+            <path fill="#C5192D" d="M93.41 29.51A48 48 0 0 1 97.69 44.57L71.86 47.51A22 22 0 0 0 69.89 40.61Z"/>
+            <path fill="#FF3A21" d="M97.88 46.57A48 48 0 0 1 96.43 62.17L71.28 55.58A22 22 0 0 0 71.94 48.43Z"/>
+            <path fill="#26BDE2" d="M95.88 64.10A48 48 0 0 1 88.90 78.12L67.83 62.89A22 22 0 0 0 71.03 56.46Z"/>
+            <path fill="#FCC30B" d="M87.69 79.72A48 48 0 0 1 76.12 90.27L61.97 68.46A22 22 0 0 0 67.27 63.62Z"/>
+            <path fill="#A21942" d="M74.41 91.33A48 48 0 0 1 59.81 96.99L54.49 71.54A22 22 0 0 0 61.19 68.94Z"/>
+            <path fill="#FD6925" d="M57.83 97.36A48 48 0 0 1 42.17 97.36L46.41 71.71A22 22 0 0 0 53.59 71.71Z"/>
+            <path fill="#DD1367" d="M40.19 96.99A48 48 0 0 1 25.59 91.33L38.81 68.94A22 22 0 0 0 45.51 71.54Z"/>
+            <path fill="#FD9D24" d="M23.88 90.27A48 48 0 0 1 12.31 79.72L32.73 63.62A22 22 0 0 0 38.03 68.46Z"/>
+            <path fill="#BF8B2E" d="M11.10 78.12A48 48 0 0 1 4.12 64.10L28.97 56.46A22 22 0 0 0 32.17 62.89Z"/>
+            <path fill="#3F7E44" d="M3.57 62.17A48 48 0 0 1 2.12 46.57L28.06 48.43A22 22 0 0 0 28.72 55.58Z"/>
+            <path fill="#0A97D9" d="M2.31 44.57A48 48 0 0 1 6.59 29.51L30.11 40.61A22 22 0 0 0 28.14 47.51Z"/>
+            <path fill="#56C02B" d="M7.49 27.71A48 48 0 0 1 16.93 15.21L34.84 34.06A22 22 0 0 0 30.52 39.78Z"/>
+            <path fill="#00689D" d="M18.41 13.86A48 48 0 0 1 31.73 5.61L41.62 29.66A22 22 0 0 0 35.52 33.43Z"/>
+            <path fill="#19486A" d="M33.60 4.89A48 48 0 0 1 48.99 2.01L49.54 28.00A22 22 0 0 0 42.48 29.32Z"/>
+          </svg>
+          <div>
+            <h2 class="sdg-showcase-title">Sustainable Development Goals</h2>
+            <p class="sdg-showcase-subtitle">MCNP &amp; ISAP institutional research, caravans, and community extension programs</p>
           </div>
         </div>
+
+        <div class="sdg-filter-bar">
+          <button type="button" class="sdg-filter-btn active" onclick="filterSDG('all', this)">All Goals (17)</button>
+          <button type="button" class="sdg-filter-btn" onclick="filterSDG('active', this)">Active Initiatives (7)</button>
+          <span class="sdg-total-badge">🌟 55 Events Documented</span>
+        </div>
+      </div>
+
+      <div class="sdg-grid" aria-label="Sustainable Development Goals">
+        <!-- Goal 1 -->
+        <a href="adg-advocacy.html?goal=1" class="sdg-goal-card sdg-goal-1" data-events="0" title="SDG 1: No Poverty">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-01.png" alt="SDG 1: No Poverty">
+        </a>
+
+        <!-- Goal 2 -->
+        <a href="adg-advocacy.html?goal=2" class="sdg-goal-card sdg-goal-2 has-events" data-events="1" title="SDG 2: Zero Hunger">
+          <span class="sdg-goal-events highlight">1 Event</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-02.png" alt="SDG 2: Zero Hunger">
+        </a>
+
+        <!-- Goal 3 -->
+        <a href="adg-advocacy.html?goal=3" class="sdg-goal-card sdg-goal-3 has-events" data-events="2" title="SDG 3: Good Health and Well-Being">
+          <span class="sdg-goal-events highlight">2 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-03.png" alt="SDG 3: Good Health and Well-Being">
+        </a>
+
+        <!-- Goal 4 -->
+        <a href="adg-advocacy.html?goal=4" class="sdg-goal-card sdg-goal-4 has-events featured" data-events="15" title="SDG 4: Quality Education">
+          <span class="sdg-goal-events highlight pulse">🔥 15 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-04.png" alt="SDG 4: Quality Education">
+        </a>
+
+        <!-- Goal 5 -->
+        <a href="adg-advocacy.html?goal=5" class="sdg-goal-card sdg-goal-5 has-events" data-events="1" title="SDG 5: Gender Equality">
+          <span class="sdg-goal-events highlight">1 Event</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-05.png" alt="SDG 5: Gender Equality">
+        </a>
+
+        <!-- Goal 6 -->
+        <a href="adg-advocacy.html?goal=6" class="sdg-goal-card sdg-goal-6" data-events="0" title="SDG 6: Clean Water and Sanitation">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-06.png" alt="SDG 6: Clean Water and Sanitation">
+        </a>
+
+        <!-- Goal 7 -->
+        <a href="adg-advocacy.html?goal=7" class="sdg-goal-card sdg-goal-7" data-events="0" title="SDG 7: Affordable and Clean Energy">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-07.png" alt="SDG 7: Affordable and Clean Energy">
+        </a>
+
+        <!-- Goal 8 -->
+        <a href="adg-advocacy.html?goal=8" class="sdg-goal-card sdg-goal-8" data-events="0" title="SDG 8: Decent Work and Economic Growth">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-08.png" alt="SDG 8: Decent Work and Economic Growth">
+        </a>
+
+        <!-- Goal 9 -->
+        <a href="adg-advocacy.html?goal=9" class="sdg-goal-card sdg-goal-9 has-events featured" data-events="13" title="SDG 9: Industry, Innovation and Infrastructure">
+          <span class="sdg-goal-events highlight pulse">🔥 13 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-09.png" alt="SDG 9: Industry, Innovation and Infrastructure">
+        </a>
+
+        <!-- Goal 10 -->
+        <a href="adg-advocacy.html?goal=10" class="sdg-goal-card sdg-goal-10" data-events="0" title="SDG 10: Reduced Inequalities">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-10.png" alt="SDG 10: Reduced Inequalities">
+        </a>
+
+        <!-- Goal 11 -->
+        <a href="adg-advocacy.html?goal=11" class="sdg-goal-card sdg-goal-11 has-events" data-events="1" title="SDG 11: Sustainable Cities and Communities">
+          <span class="sdg-goal-events highlight">1 Event</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-11.png" alt="SDG 11: Sustainable Cities and Communities">
+        </a>
+
+        <!-- Goal 12 -->
+        <a href="adg-advocacy.html?goal=12" class="sdg-goal-card sdg-goal-12" data-events="0" title="SDG 12: Responsible Consumption and Production">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-12.png" alt="SDG 12: Responsible Consumption and Production">
+        </a>
+
+        <!-- Goal 13 -->
+        <a href="adg-advocacy.html?goal=13" class="sdg-goal-card sdg-goal-13" data-events="0" title="SDG 13: Climate Action">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-13.png" alt="SDG 13: Climate Action">
+        </a>
+
+        <!-- Goal 14 -->
+        <a href="adg-advocacy.html?goal=14" class="sdg-goal-card sdg-goal-14" data-events="0" title="SDG 14: Life Below Water">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-14.png" alt="SDG 14: Life Below Water">
+        </a>
+
+        <!-- Goal 15 -->
+        <a href="adg-advocacy.html?goal=15" class="sdg-goal-card sdg-goal-15" data-events="0" title="SDG 15: Life on Land">
+          <span class="sdg-goal-events">0 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-15.png" alt="SDG 15: Life on Land">
+        </a>
+
+        <!-- Goal 16 -->
+        <a href="adg-advocacy.html?goal=16" class="sdg-goal-card sdg-goal-16 has-events featured" data-events="7" title="SDG 16: Peace, Justice and Strong Institutions">
+          <span class="sdg-goal-events highlight">7 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-16.png" alt="SDG 16: Peace, Justice and Strong Institutions">
+        </a>
+
+        <!-- Goal 17 -->
+        <a href="adg-advocacy.html?goal=17" class="sdg-goal-card sdg-goal-17 has-events featured" data-events="15" title="SDG 17: Partnerships for the Goals">
+          <span class="sdg-goal-events highlight pulse">🔥 15 Events</span>
+          <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-17.png" alt="SDG 17: Partnerships for the Goals">
+        </a>
+
+        <!-- 18th Card: Seamless 6x3 Desktop Grid Completion -->
+        <a href="adg-advocacy.html" class="sdg-goal-card sdg-goal-cta" title="Explore all SDG Advocacies">
+          <div class="sdg-cta-content">
+            <span class="sdg-cta-icon">🌍</span>
+            <strong>Explore All SDG Advocacies</strong>
+            <span class="sdg-cta-arrow">View Portal &rarr;</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -179,7 +309,6 @@
       </div>
 
       <div class="institutions-grid">
-        <!-- MCNP Card -->
         <article class="inst-card">
           <div class="inst-banner inst-banner-mcnp">
             <span class="inst-badge-text">Medical &amp; Allied Health Sciences</span>
@@ -208,7 +337,6 @@
           </div>
         </article>
 
-        <!-- ISAP Card -->
         <article class="inst-card">
           <div class="inst-banner inst-banner-isap">
             <span class="inst-badge-text">Multidisciplinary Studies &amp; Public Safety</span>
@@ -312,7 +440,6 @@
         </p>
       </div>
 
-      <!-- Journal Tabs -->
       <div class="journal-tabs-wrap">
         <button class="tab-btn active" data-filter="all">All Articles</button>
         <button class="tab-btn" data-filter="mcnp">MCNP Health Journal</button>
@@ -320,7 +447,6 @@
       </div>
 
       <div class="articles-grid">
-        <!-- Article 1: MCNP -->
         <article class="article-card" data-journal="mcnp">
           <div class="article-header">
             <span class="article-journal-badge badge-mcnp">MCNP Health Journal • Vol. 8 Issue 2</span>
@@ -336,7 +462,6 @@
           </div>
         </article>
 
-        <!-- Article 2: ISAP -->
         <article class="article-card" data-journal="isap">
           <div class="article-header">
             <span class="article-journal-badge badge-isap">ISAP Multidisciplinary • Vol. 11 Issue 1</span>
@@ -352,7 +477,6 @@
           </div>
         </article>
 
-        <!-- Article 3: MCNP -->
         <article class="article-card" data-journal="mcnp">
           <div class="article-header">
             <span class="article-journal-badge badge-mcnp">MCNP Health Journal • Vol. 8 Issue 1</span>
@@ -377,46 +501,6 @@
     </div>
   </section>
 
-  <!-- SDG Advocacies Section Callout -->
-  <section class="container">
-    <div class="advocacy-callout">
-      <div class="advocacy-inner">
-        <div>
-          <img class="sdg-icon-image" src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-03.png" alt="Sustainable Development Goal 3: Good Health and Well-Being">
-          <span class="advocacy-badge">Institutional Commitment</span>
-          <h2>SDG Advocacies: Research in Service of the People</h2>
-          <p>
-            In honoring the legacy of Dr. Ronald P. Guzman and Atty. Cristina Guzman, the SDG Advocacies bridge laboratory breakthroughs directly into grassroots healthcare missions, legal aid clinics, disaster mitigation, and educational outreach for underserved communities in Region II.
-          </p>
-          <a href="adg-advocacy.html" class="btn btn-gold">Discover SDG Advocacies &amp; Projects &rarr;</a>
-        </div>
-        <div class="advocacy-stats-box">
-          <div class="advocacy-stat-row">
-            <div class="stat-icon">🏥</div>
-            <div class="stat-text">
-              <h5>Medical &amp; Allied Health Caravans</h5>
-              <p>Over 14,000 community residents served with free diagnostic tests &amp; medicines.</p>
-            </div>
-          </div>
-          <div class="advocacy-stat-row">
-            <div class="stat-icon">⚖️</div>
-            <div class="stat-text">
-              <h5>Community Legal &amp; Criminology Aid</h5>
-              <p>Crime prevention symposiums and human rights literacy across 36 barangays.</p>
-            </div>
-          </div>
-          <div class="advocacy-stat-row">
-            <div class="stat-icon">🌳</div>
-            <div class="stat-text">
-              <h5>Cagayan River Green Reforestation</h5>
-              <p>Faculty and student environmental stewardship along vital waterways.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- News & Events Section -->
   <section class="section" style="padding-top: 1rem;">
     <div class="container">
@@ -427,53 +511,81 @@
       </div>
 
       <div class="news-grid">
-        <div class="news-card">
-          <div class="news-thumbnail">
-            <span class="news-date-badge">Latest</span>
-            <div>
-              <h4 style="font-size: 1.1rem; color: #fff;">Official Journal Publications</h4>
+        <!-- Card 1: Publications -->
+        <article class="news-card">
+          <div class="news-thumbnail news-thumb-journal">
+            <span class="news-date-badge">Latest Edition</span>
+            <div class="news-thumb-text">
+              <span class="news-thumb-pill">Scholarly Press</span>
+              <h4 class="news-thumb-topic">Official Journal Publications</h4>
             </div>
           </div>
           <div class="news-content">
             <div>
+              <span class="news-category-tag badge-mcnp">Peer-Reviewed Journals</span>
               <h3 class="news-title">MCNP and ISAP Journals Advance Scholarly Research</h3>
-              <p class="news-excerpt">Explore official publications including DAGILAP, TIGNAY, CHARTULAE, BORN RMT, PRIMUM MOVENS, THE BORDERLESS, PLUMA, POLICE, and other institutional journals.</p>
+              <p class="news-excerpt">
+                Explore premier faculty and student publications including DAGILAP, TIGNAY, CHARTULAE, BORN RMT, PRIMUM MOVENS, THE BORDERLESS, PLUMA, and other institutional journals.
+              </p>
             </div>
-            <a href="news-events.html" class="news-link">Read Full Announcement &rarr;</a>
+            <div class="news-footer-action">
+              <a href="news-events.html" class="news-link">Read Full Announcement &rarr;</a>
+              <span class="news-meta-type">Institutional</span>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="news-card">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #0d5c3a, #15803d);">
+        <!-- Card 2: CBCP-UST Collaborative Study -->
+        <article class="news-card">
+          <div class="news-thumbnail news-thumb-photo">
+            <img src="upload/1.jpg" alt="RDC Joins CBCP-UST Project" class="news-thumb-bg" loading="lazy">
+            <div class="news-thumb-overlay"></div>
             <span class="news-date-badge">Nov 17, 2024</span>
-            <div>
-              <h4 style="font-size: 1.1rem; color: #fff;">Collaborative Research</h4>
+            <div class="news-thumb-text">
+              <span class="news-thumb-pill">Regional Partnership</span>
+              <h4 class="news-thumb-topic">Collaborative Research</h4>
             </div>
           </div>
           <div class="news-content">
             <div>
+              <span class="news-category-tag badge-admin">CBCP-UST Study</span>
               <h3 class="news-title">RDC Joins CBCP-UST Catholic Christianity Project</h3>
-              <p class="news-excerpt">The MCNP-ISAP Research and Development Center participated in a collaborative study examining the current status of Catholic Christianity in the Philippines.</p>
+              <p class="news-excerpt">
+                The MCNP-ISAP Research &amp; Development Center joined regional researchers in analyzing pastoral developments and community surveys toward a synodal Church in the Philippines.
+              </p>
             </div>
-            <a href="news-events.html" class="news-link">Read Full Announcement &rarr;</a>
+            <div class="news-footer-action">
+              <a href="news-events.html" class="news-link">Read Full Announcement &rarr;</a>
+              <span class="news-meta-type">Archdiocese Meeting</span>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="news-card">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #0b3c5d, #1e40af);">
-            <span class="news-date-badge">2024</span>
-            <div>
-              <h4 style="font-size: 1.1rem; color: #fff;">Student Achievement</h4>
+        <!-- Card 3: Student Statistics Competitions -->
+        <article class="news-card">
+          <div class="news-thumbnail news-thumb-stats">
+            <img src="upload/10.jpg" alt="Student Achievement" class="news-thumb-bg" loading="lazy">
+            <div class="news-thumb-overlay"></div>
+            <span class="news-date-badge">35th NSM</span>
+            <div class="news-thumb-text">
+              <span class="news-thumb-pill">Excellence</span>
+              <h4 class="news-thumb-topic">Student Achievement</h4>
             </div>
           </div>
           <div class="news-content">
             <div>
-              <h3 class="news-title">MCNP and ISAP Students Excel in Statistics Competitions</h3>
-              <p class="news-excerpt">Students earned top placements in the 28th Philippine Statistics Quiz Bee, Digital Poster Making Contest, and the institutional quiz bee held during National Statistics Month.</p>
+              <span class="news-category-tag badge-isap">Competition Awards</span>
+              <h3 class="news-title">MCNP &amp; ISAP Students Excel in Statistics Competitions</h3>
+              <p class="news-excerpt">
+                Students secured champion and podium finishes in the 28th Philippine Statistics Quiz Bee, Digital Poster Making Contest, and regional data literacy symposiums.
+              </p>
             </div>
-            <a href="news-events.html" class="news-link">Read Full Announcement &rarr;</a>
+            <div class="news-footer-action">
+              <a href="news-events.html" class="news-link">Read Full Announcement &rarr;</a>
+              <span class="news-meta-type">Regional Awardees</span>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
 
       <div style="text-align: center; margin-top: 2.5rem;">
@@ -528,11 +640,11 @@
           </div>
           <div class="footer-contact-item">
             <span>✉️</span>
-            <span>rdc@mcnp-isap.edu.ph</span>
+            <span><a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
           </div>
           <div class="footer-contact-item">
             <span>📞</span>
-            <span>(078) 304-1010 / 304-2020</span>
+            <span><a href="tel:+639989847781" style="color:inherit">(+63) 998 984 7781</a></span>
           </div>
           <div style="margin-top: 1rem;">
             <a href="contact.html" class="btn btn-sm btn-gold">Inquire with RDC</a>
@@ -554,4 +666,3 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-

@@ -5,6 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SDG Advocacies | MCNP &amp; ISAP Research &amp; Community Extension</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@400;500&display=swap">
+  <style>
+    /* SDG goal page (UN-style). Change --goal on .un-hero / .un-page to reuse for other goals. */
+    .un-page{--oswald:'Oswald','Arial Narrow',sans-serif;font-family:'Roboto',Arial,sans-serif;color:#333}
+    .un-hero{background:var(--goal);color:#fff;padding:2.2rem 0 3rem;min-height:340px}
+    .un-hero .breadcrumbs,.un-hero .breadcrumbs a{color:#fff;font-size:.8rem;opacity:.9}
+    .un-hero .breadcrumbs{margin-bottom:1.6rem}
+    .un-label{display:inline-block;font:500 1rem var(--oswald);color:#fff;text-decoration:none;border-bottom:1px solid #fff;padding-bottom:2px}
+    .un-num{font:700 4.5rem/1 var(--oswald);color:rgba(255,255,255,.4);margin:1rem 0 .4rem}
+    .un-hero h1{font:600 clamp(2rem,5vw,3rem)/1.15 var(--oswald);margin:0;color:#fff}
+    .un-rule{display:block;width:56px;height:1px;background:#fff;margin:1.25rem 0 3rem}
+    .un-next{display:inline-block;padding:.35rem 1.1rem;border:1px solid #fff;border-radius:999px;color:#fff;font:500 .85rem var(--oswald);text-decoration:none}
+    .un-next:hover,.un-next:focus-visible{background:#fff;color:var(--goal)}
+    .un-pager{display:flex;gap:.7rem}
+    .un-prev{display:inline-block;padding:.35rem 1.1rem;border:1px solid #fff;border-radius:999px;color:#fff;font:500 .85rem var(--oswald);text-decoration:none}
+    .un-prev:hover,.un-prev:focus-visible{background:#fff;color:var(--goal)}
+    .un-tabs{background:#fff;border-bottom:1px solid #e3e3e3}
+    .un-tabs .container{display:flex;gap:2rem;overflow-x:auto}
+    .un-tabs a{padding:1rem 0;font:500 .95rem var(--oswald);letter-spacing:.03em;color:#333;text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+    .un-tabs a:hover,.un-tabs a:focus-visible{border-color:var(--goal);color:var(--goal)}
+    .un-section{padding:3rem 0 1rem}
+    .un-h{display:flex;align-items:center;gap:1rem;font:600 1.9rem var(--oswald);margin:0 0 1.5rem;color:#2b2b2b}
+    .un-h::before{content:"";width:42px;height:1px;background:var(--goal)}
+    .un-overview{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem}
+    .un-overview p{line-height:1.75;margin:0 0 1rem;max-width:68ch}
+    .un-pillars{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+    .un-pillars li{border-left:3px solid var(--goal);background:#f7f7f7;padding:.8rem 1rem}
+    .un-pillars b{display:block;font:600 1.05rem var(--oswald);color:#222}
+    .un-pillars span{font-size:.88rem;color:#555}
+    .un-topic{display:flex;gap:1rem;width:min(100%,300px);border:1px solid #ddd;padding:.8rem;text-decoration:none;color:#222;background:#fff}
+    .un-topic:hover{border-color:var(--goal)}
+    .un-thumb{flex:0 0 75px;height:100px;background:linear-gradient(160deg,var(--goal),#2b2b2b)}
+    .un-topic-body{display:flex;flex-direction:column;justify-content:space-between}
+    .un-topic h3{font:600 1.05rem var(--oswald);margin:0}
+    .un-topic small,.un-ev-goals small{display:block;font-size:.68rem;color:#999;margin-bottom:.35rem}
+    .un-badge{display:inline-block;min-width:22px;padding:2px 6px;margin-right:4px;border-radius:3px;background:var(--c);color:#fff;font:700 .7rem Arial,sans-serif;text-align:center}
+    .g1{--c:#E5243B}.g2{--c:#DDA63A}.g3{--c:#4C9F38}.g5{--c:#FF3A21}.g8{--c:#A21942}.g9{--c:#FD6925}
+    .g10{--c:#DD1367}.g12{--c:#BF8B2E}.g13{--c:#3F7E44}.g16{--c:#00689D}.g17{--c:#19486A}
+    .un-ev-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .un-ev-head .un-h{margin:0;padding-right:2rem;border-right:1px solid #999;text-transform:uppercase}
+    .un-ev-head .un-h::before{display:none}
+    .un-see{border:1px solid #009edb;color:#009edb;padding:.6rem 2.2rem;font-size:.8rem;text-decoration:none;background:#fff}
+    .un-see:hover,.un-see:focus-visible{background:#009edb;color:#fff}
+    .un-events{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin:1.5rem 0 3rem}
+    .un-ev{display:flex;flex-direction:column;border:1px solid #ddd;padding:1.5rem;background:#fff;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
+    .un-ev:hover,.un-ev:focus-visible{border-color:var(--goal);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+    .un-day{font:600 2rem/1 var(--oswald);color:#222}
+    .un-mon{font-size:.72rem;color:#666;margin-top:.4rem}
+    .un-mon::after{content:"";display:block;width:26px;height:1px;background:#666;margin-top:.7rem}
+    .un-ev-topic{display:inline-block;align-self:flex-start;font:600 .68rem var(--oswald);letter-spacing:.03em;text-transform:uppercase;color:var(--goal);background:color-mix(in srgb, var(--goal) 12%, #fff);border-radius:3px;padding:.2rem .55rem;margin-top:.9rem}
+    .un-ev h3{font:600 1.05rem/1.35 var(--oswald);margin:1rem 0 .5rem;color:#222}
+    .un-range{font-size:.8rem;color:#555}
+    .un-ev-goals{margin-top:auto;padding-top:1.4rem}
+    .un-ev-link{margin-top:.9rem;font:600 .72rem var(--oswald);letter-spacing:.03em;text-transform:uppercase;color:var(--goal)}
+    @media(max-width:800px){.un-overview{grid-template-columns:1fr}.un-ev-head{flex-wrap:wrap}}
+    .un-goalbar{background:#f4f4f4;border-bottom:1px solid #e3e3e3}
+    .un-goalbar .container{display:flex;gap:6px;overflow-x:auto;padding:.75rem 4px}
+    .un-goalbar a{flex:0 0 auto;width:34px;height:34px;display:grid;place-items:center;background:var(--c);color:#fff;font:700 .85rem var(--oswald);text-decoration:none;border-radius:3px;opacity:.55}
+    .un-goalbar a:hover,.un-goalbar a:focus-visible,.un-goalbar a[aria-current]{opacity:1}
+    .un-goalbar a[aria-current]{outline:2px solid #222;outline-offset:2px}
+    .un-empty{grid-column:1/-1;color:#666;margin:0}
+    .un-related{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;width:min(100%,420px)}
+    .un-related li{border-left:3px solid var(--goal);background:#f7f7f7}
+    .un-related a{display:block;padding:.75rem 1rem;text-decoration:none;color:#222}
+    .un-related a:hover,.un-related a:focus-visible{background:#f0f0f0}
+    .un-related-date{display:block;font-size:.68rem;letter-spacing:.03em;text-transform:uppercase;color:var(--goal);font-weight:600;margin-bottom:.2rem}
+    .un-related-title{display:block;font:600 .98rem/1.4 var(--oswald);color:#222}
+    .un-related-empty{color:#666;margin:0}
+  </style>
 </head>
 <body>
 
@@ -13,11 +84,10 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ rdc@mcnp-isap.edu.ph</span>
-        <span>📞 (078) 304-1010</span>
+        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
-        <span class="badge-pill">SDG: Community Impact &amp; Social Accountability</span>
         <a href="journal-admin.html" style="color: #ffdf70; font-weight: 600; text-decoration: underline; font-size: 0.78rem;">Journal of Admin</a>
       </div>
     </div>
@@ -43,7 +113,6 @@
               <a href="index.html" class="nav-link">HOME</a>
             </li>
 
-            <!-- Dropdown: ABOUT INSTITUTION -->
             <li class="nav-item dropdown">
               <a href="about-mcnp.html" class="nav-link">
                 ABOUT INSTITUTION <span class="arrow">&#9662;</span>
@@ -60,7 +129,6 @@
               </div>
             </li>
 
-            <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
               <a href="about-rdc-mcnp.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
@@ -81,7 +149,6 @@
               <a href="rdc-agenda.html" class="nav-link">RDC AGENDA</a>
             </li>
 
-            <!-- Dropdown: JOURNAL -->
             <li class="nav-item dropdown">
               <a href="journal-mcnp.html" class="nav-link">
                 JOURNAL <span class="arrow">&#9662;</span>
@@ -106,11 +173,11 @@
               </div>
             </li>
 
-            <li class="nav-item">
-              <a href="news-events.html" class="nav-link">NEWS AND EVENT</a>
+            <li class="nav-item dropdown">
+              <a href="news.html" class="nav-link">NEWS <span class="arrow">&#9662;</span></a>
+              <div class="dropdown-menu"><a href="news.html" class="dropdown-link"><span>News</span></a><a href="news-events.html" class="dropdown-link"><span>Events</span></a></div>
             </li>
 
-            <!-- 7. SDG ADVOCACIES -->
             <li class="nav-item">
               <a href="adg-advocacy.html" class="nav-link active">SDG ADVOCACIES</a>
             </li>
@@ -126,250 +193,68 @@
     </div>
   </header>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="breadcrumbs">
-        <a href="index.html">Home</a> &gt; <span>SDG Advocacies</span>
-      </div>
-      <img class="sdg-icon-image" src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-03.png" alt="Sustainable Development Goal 3: Good Health and Well-Being">
-      <h1>SDG Advocacies: Research in the Service of Communities</h1>
-      <p>Bridging academic research, clinical expertise, and legal scholarship directly into tangible healthcare, public safety, and environmental outreach for Cagayan Valley.</p>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <main class="section">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
-        <div>
-          <span class="section-tag">Translational Research</span>
-          <h2 class="section-title">The Ronald &amp; Cristina Guzman Legacy of Social Responsibility</h2>
-          <p style="font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 1.5rem;">
-            At MCNP and ISAP, research does not end on the printed pages of scientific journals. Under the <strong>SDG Advocacies</strong> initiative, scientific discoveries, health protocols, and criminology analyses are translated into active community development programs that directly benefit underserved barangays across Peñablanca, Tuguegarao City, and rural municipalities in Cagayan Valley.
-          </p>
-
-          <p style="font-size: 1.02rem; color: #475569; line-height: 1.7; margin-bottom: 2.5rem;">
-            In keeping with the institutional ideals of founder <strong>Dr. Ronald P. Guzman</strong> and <strong>Atty. Cristina Guzman</strong>, the SDG Advocacies integrate community extension into the academic curricula of all colleges, pairing empirical research with compassionate humanitarian action.
-          </p>
-
-          <div class="sdg-card-grid" aria-label="United Nations Sustainable Development Goals">
-            <article class="sdg-card" data-sdg-card data-goal="1" aria-label="View SDG 1 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-01.png" alt="SDG 1: No Poverty">
-              </div>
-              <span class="sdg-card-title">SDG 1: No Poverty</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="2" aria-label="View SDG 2 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-02.png" alt="SDG 2: Zero Hunger">
-              </div>
-              <span class="sdg-card-title">SDG 2: Zero Hunger</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="3" aria-label="View SDG 3 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-03.png" alt="SDG 3: Good Health and Well-Being">
-              </div>
-              <span class="sdg-card-title">SDG 3: Good Health and Well-Being</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="4" aria-label="View SDG 4 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-04.png" alt="SDG 4: Quality Education">
-              </div>
-              <span class="sdg-card-title">SDG 4: Quality Education</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="5" aria-label="View SDG 5 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-05.png" alt="SDG 5: Gender Equality">
-              </div>
-              <span class="sdg-card-title">SDG 5: Gender Equality</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="6" aria-label="View SDG 6 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-06.png" alt="SDG 6: Clean Water and Sanitation">
-              </div>
-              <span class="sdg-card-title">SDG 6: Clean Water and Sanitation</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="7" aria-label="View SDG 7 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-07.png" alt="SDG 7: Affordable and Clean Energy">
-              </div>
-              <span class="sdg-card-title">SDG 7: Affordable and Clean Energy</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="8" aria-label="View SDG 8 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-08.png" alt="SDG 8: Decent Work and Economic Growth">
-              </div>
-              <span class="sdg-card-title">SDG 8: Decent Work and Economic Growth</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="9" aria-label="View SDG 9 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-09.png" alt="SDG 9: Industry, Innovation and Infrastructure">
-              </div>
-              <span class="sdg-card-title">SDG 9: Industry, Innovation and Infrastructure</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="10" aria-label="View SDG 10 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-10.png" alt="SDG 10: Reduced Inequalities">
-              </div>
-              <span class="sdg-card-title">SDG 10: Reduced Inequalities</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="11" aria-label="View SDG 11 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-11.png" alt="SDG 11: Sustainable Cities and Communities">
-              </div>
-              <span class="sdg-card-title">SDG 11: Sustainable Cities and Communities</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="12" aria-label="View SDG 12 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-12.png" alt="SDG 12: Responsible Consumption and Production">
-              </div>
-              <span class="sdg-card-title">SDG 12: Responsible Consumption and Production</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="13" aria-label="View SDG 13 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-13.png" alt="SDG 13: Climate Action">
-              </div>
-              <span class="sdg-card-title">SDG 13: Climate Action</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="14" aria-label="View SDG 14 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-14.png" alt="SDG 14: Life Below Water">
-              </div>
-              <span class="sdg-card-title">SDG 14: Life Below Water</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="15" aria-label="View SDG 15 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-15.png" alt="SDG 15: Life on Land">
-              </div>
-              <span class="sdg-card-title">SDG 15: Life on Land</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="16" aria-label="View SDG 16 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-16.png" alt="SDG 16: Peace, Justice and Strong Institutions">
-              </div>
-              <span class="sdg-card-title">SDG 16: Peace, Justice and Strong Institutions</span>
-            </article>
-            <article class="sdg-card" data-sdg-card data-goal="17" aria-label="View SDG 17 advocacy details">
-              <div class="sdg-card-static-image">
-                <img src="assets/E%20SDG%20Icons%20WEB/E-WEB-Goal-17.png" alt="SDG 17: Partnerships for the Goals">
-              </div>
-              <span class="sdg-card-title">SDG 17: Partnerships for the Goals</span>
-            </article>
-          </div>
-
-          <div class="sdg-event-modal" data-sdg-modal role="dialog" aria-modal="true" aria-labelledby="sdg-event-title">
-            <div class="sdg-event-card">
-              <button class="sdg-event-close" type="button" data-sdg-close aria-label="Close SDG advocacy card">&times;</button>
-              <div class="sdg-modal-gallery" data-sdg-modal-gallery></div>
-              <div class="sdg-modal-copy">
-                <span class="section-tag">SDG Advocacy Events</span>
-                <h3 id="sdg-event-title" data-sdg-modal-link></h3>
-                <div class="sdg-event-list" data-sdg-modal-events></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- The Four Flagship Programs -->
-          <h3 style="font-size: 1.4rem; color: #1e293b; margin-bottom: 1.5rem;">Flagship SDG Extension Programs</h3>
-          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;">
-            <!-- Program 1 -->
-            <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); border-left: 5px solid var(--mcnp-green);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <h4 style="font-size: 1.2rem; color: var(--mcnp-green);">1. Alagang Dr. Guzman (SDG) Health Caravans</h4>
-                <span class="dropdown-badge badge-mcnp">MCNP Medical Wing</span>
-              </div>
-              <p style="font-size: 0.92rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;">
-                Providing free comprehensive medical consultations, complete blood counts, urinalysis, radiologic chest screenings, and prescription medicines to remote upland barangays in Peñablanca and indigenous Agta communities.
-              </p>
-              <div style="font-size: 0.85rem; color: #64748b;">
-                <strong>Research Linkage:</strong> Real-time epidemiological data collection on prevalent non-communicable diseases and nutritional deficiencies in upland Cagayan.
-              </div>
-            </div>
-
-            <!-- Program 2 -->
-            <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); border-left: 5px solid var(--isap-blue);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <h4 style="font-size: 1.2rem; color: var(--isap-blue);">2. Community Legal Literacy &amp; Crime Prevention Clinics</h4>
-                <span class="dropdown-badge badge-isap">ISAP Criminology &amp; Customs</span>
-              </div>
-              <p style="font-size: 0.92rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;">
-                Faculty-led workshops educating barangay tanods, youth leaders, and women's cooperatives on domestic violence reporting (RA 9262), cyber safety against online sexual abuse of children (OSAEC), and dispute mediation.
-              </p>
-              <div style="font-size: 0.85rem; color: #64748b;">
-                <strong>Research Linkage:</strong> Empirical baseline surveys measuring community legal comprehension and dispute resolution efficacy.
-              </div>
-            </div>
-
-            <!-- Program 3 -->
-            <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); border-left: 5px solid #16a34a;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <h4 style="font-size: 1.2rem; color: #16a34a;">3. Pinacanauan &amp; Cagayan River Ecological Stewardship</h4>
-                <span class="dropdown-badge" style="background: #dcfce7; color: #15803d;">Joint Environmental Wing</span>
-              </div>
-              <p style="font-size: 0.92rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;">
-                Collaborative tree-planting campaigns along riverbank buffer zones, continuous water quality microbiological sampling, and community solid waste segregation seminars.
-              </p>
-              <div style="font-size: 0.85rem; color: #64748b;">
-                <strong>Research Linkage:</strong> Water quality indices published in the MCNP Health Journal to advise the Peñablanca Municipal Environment Office.
-              </div>
-            </div>
-
-            <!-- Program 4 -->
-            <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); border-left: 5px solid var(--gold);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                <h4 style="font-size: 1.2rem; color: #926f0d;">4. Barangay Health Worker (BHW) Skills Enhancement</h4>
-                <span class="dropdown-badge badge-admin">Continuing Education</span>
-              </div>
-              <p style="font-size: 0.92rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;">
-                Accredited hands-on training modules delivered by nursing and medical technology faculty to upskill frontline community health volunteers in vital signs monitoring, maternal danger sign triage, and infectious disease reporting.
-              </p>
-              <div style="font-size: 0.85rem; color: #64748b;">
-                <strong>Research Linkage:</strong> Assessing long-term clinical skill retention among rural healthcare volunteers.
-              </div>
-            </div>
-          </div>
+  <main class="un-page" id="un-page" style="--goal:#E5243B">
+    <section class="un-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a> &gt; <span>SDG Advocacies</span>
         </div>
-
-        <!-- Sidebar -->
-        <div>
-          <!-- Impact Metrics -->
-          <div style="background: var(--white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); margin-bottom: 2rem;">
-            <h4 style="font-size: 1.1rem; color: var(--mcnp-green); margin-bottom: 1.25rem;">Community Footprint</h4>
-            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-              <div>
-                <div style="font-size: 1.8rem; font-weight: 800; color: var(--mcnp-green); line-height: 1;">14,250+</div>
-                <div style="font-size: 0.82rem; color: var(--muted-text);">Beneficiaries Served in Health Caravans</div>
-              </div>
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-                <div style="font-size: 1.8rem; font-weight: 800; color: var(--isap-blue); line-height: 1;">36</div>
-                <div style="font-size: 0.82rem; color: var(--muted-text);">Adopted Partner Barangays</div>
-              </div>
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-                <div style="font-size: 1.8rem; font-weight: 800; color: #16a34a; line-height: 1;">3,200+</div>
-                <div style="font-size: 0.82rem; color: var(--muted-text);">Native Trees Planted Along Riverbanks</div>
-              </div>
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem;">
-                <div style="font-size: 1.8rem; font-weight: 800; color: #b45309; line-height: 1;">420+</div>
-                <div style="font-size: 0.82rem; color: var(--muted-text);">Barangay Health Workers Certified</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Partner With SDG -->
-          <div style="background: linear-gradient(135deg, var(--mcnp-green-dark), var(--isap-blue-dark)); border-radius: 12px; padding: 1.75rem; color: #fff;">
-            <h4 style="font-size: 1.1rem; color: var(--gold); margin-bottom: 0.75rem;">Propose an Outreach Partnership</h4>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: #e2e8f0; margin-bottom: 1.25rem;">
-              Is your LGU, NGO, or rural health center interested in co-organizing an evidence-backed medical mission, legal clinic, or ecological drive?
-            </p>
-            <a href="contact.html" class="btn btn-sm btn-gold" style="width: 100%; justify-content: center;">Send Partnership Request &rarr;</a>
-          </div>
+        <a href="?goal=1" data-goal="1" class="un-label">Goals</a>
+        <div class="un-num" id="un-num" aria-hidden="true"></div>
+        <h1 id="un-title"></h1>
+        <span class="un-rule"></span>
+        <div class="un-pager">
+          <a href="?goal=17" data-goal="17" class="un-prev" id="un-prev">&larr; Previous</a>
+          <a href="?goal=2" data-goal="2" class="un-next" id="un-next">Next &rarr;</a>
         </div>
       </div>
-    </div>
+    </section>
+
+    <nav class="un-goalbar" id="un-goalbar" aria-label="All Sustainable Development Goals">
+      <div class="container"></div>
+    </nav>
+
+    <nav class="un-tabs" aria-label="Page sections">
+      <div class="container">
+        <a href="#overview">Overview</a>
+        <a href="#topics">Related Topics</a>
+        <a href="#events">Events</a>
+      </div>
+    </nav>
+
+    <section class="un-section" id="overview">
+      <div class="container">
+        <h2 class="un-h">Overview</h2>
+        <div class="un-overview">
+          <div id="un-ov"></div>
+          <ul class="un-pillars">
+            <li><b>Research</b><span>Studies on health access, livelihoods and public safety in local communities.</span></li>
+            <li><b>Community extension</b><span>Outreach programs that put research findings to work on the ground.</span></li>
+            <li><b>Partnerships</b><span>Work with local government, schools and organizations toward the 2030 Agenda.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="un-section" id="topics">
+      <div class="container">
+        <h2 class="un-h">Related Topics</h2>
+        <p style="margin:0 0 1.25rem;color:#555;max-width:60ch">Institutional stories and events from the RDC that connect directly to this goal.</p>
+        <ul class="un-related" id="un-topic"></ul>
+      </div>
+    </section>
+
+    <section class="un-section" id="events">
+      <div class="container">
+        <div class="un-ev-head">
+          <h2 class="un-h">Events</h2>
+          <a href="news-events.html" class="un-see">See all events</a>
+        </div>
+        <div class="un-events" id="un-events"></div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -399,7 +284,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">rdc@mcnp-isap.edu.ph | (078) 304-1010</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>
@@ -409,7 +294,121 @@
     </div>
   </footer>
 
+  <script>
+  (function(){
+    var G=[
+      ["No Poverty","End poverty in all its forms everywhere","#E5243B","Goal 1 aims to end poverty everywhere, looking beyond income to access to health care, food, education and decent work.","Poverty eradication"],
+      ["Zero Hunger","End hunger, achieve food security and improved nutrition and promote sustainable agriculture","#DDA63A","Goal 2 seeks to end hunger, secure good nutrition for everyone and support farming that sustains both people and land.","Food security and nutrition"],
+      ["Good Health and Well-being","Ensure healthy lives and promote well-being for all at all ages","#4C9F38","Goal 3 works toward healthy lives and well-being for people of all ages, from primary care to protection against disease.","Health and well-being"],
+      ["Quality Education","Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all","#C5192D","Goal 4 promotes inclusive, quality education and learning opportunities that last a lifetime.","Lifelong learning"],
+      ["Gender Equality","Achieve gender equality and empower all women and girls","#FF3A21","Goal 5 pushes for equal rights and opportunities for women and girls at home, at work and in public life.","Women’s empowerment"],
+      ["Clean Water and Sanitation","Ensure availability and sustainable management of water and sanitation for all","#26BDE2","Goal 6 aims for safe drinking water, sanitation and well-managed water resources for everyone.","Safe water and sanitation"],
+      ["Affordable and Clean Energy","Ensure access to affordable, reliable, sustainable and modern energy for all","#FCC30B","Goal 7 calls for reliable, affordable and clean energy that reaches every household and business.","Clean and modern energy"],
+      ["Decent Work and Economic Growth","Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all","#A21942","Goal 8 supports steady, inclusive economic growth and productive, decent jobs for all.","Decent work and growth"],
+      ["Industry, Innovation and Infrastructure","Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation","#FD6925","Goal 9 focuses on resilient infrastructure and inclusive industry and innovation that widen opportunity.","Innovation and infrastructure"],
+      ["Reduced Inequalities","Reduce inequality within and among countries","#DD1367","Goal 10 works to narrow gaps in income, opportunity and treatment within and between countries.","Inclusion and equity"],
+      ["Sustainable Cities and Communities","Make cities and human settlements inclusive, safe, resilient and sustainable","#FD9D24","Goal 11 aims to make cities and communities safe, inclusive, resilient and sustainable.","Resilient communities"],
+      ["Responsible Consumption and Production","Ensure sustainable consumption and production patterns","#BF8B2E","Goal 12 encourages wiser use of resources and less waste in how we produce and consume.","Sustainable consumption"],
+      ["Climate Action","Take urgent action to combat climate change and its impacts","#3F7E44","Goal 13 calls for urgent action on climate change and for helping communities cope with its effects.","Climate adaptation"],
+      ["Life Below Water","Conserve and sustainably use the oceans, seas and marine resources for sustainable development","#0A97D9","Goal 14 seeks to protect oceans, seas and marine life and to use their resources sustainably.","Marine conservation"],
+      ["Life on Land","Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss","#56C02B","Goal 15 aims to protect forests and land ecosystems, restore degraded land and halt biodiversity loss.","Forests and biodiversity"],
+      ["Peace, Justice and Strong Institutions","Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels","#00689D","Goal 16 promotes peaceful, inclusive societies, access to justice and accountable institutions.","Justice and strong institutions"],
+      ["Partnerships for the Goals","Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development","#19486A","Goal 17 builds the partnerships and resources needed to deliver every other goal.","Global partnerships"]
+    ];
+    // Each event now carries the id of its full story on news-events.html (see news-events.html #event-*)
+    // so the SDG page and the News & Events page stay connected instead of duplicating content.
+    var E=[
+      {d:"17",m:"SEP 2026",t:"Strengthening Data Skills for Better Health Research",r:"Thu 17 - Fri 18 Sep 2026",topic:"Professional Development",g:[3,4,9,17],id:"event-data-skills"},
+      {d:"17",m:"SEP 2026",t:"Pharmacy Research with Purpose: Every Study, a Goal and an Impact",r:"Thu 17 - Fri 18 Sep 2026",topic:"BS Pharmacy",g:[4,9,16,17],id:"event-pharmacy-research"},
+      {d:"16",m:"SEP 2026",t:"From Problems to Purpose: Strengthening Research Capacity",r:"Wed 16 Sep 2026",topic:"General Education Department",g:[4,9,16,17],id:"event-problems-to-purpose"},
+      {d:"16",m:"SEP 2026",t:"Leading Through Inquiry, Improving Through Evidence",r:"Wed 16 Sep 2026",topic:"Academic Heads",g:[4,9,17],id:"event-leading-through-inquiry"},
+      {d:"15",m:"SEP 2026",t:"From Numbers to Narratives: Making Data Meaningful",r:"Tue 15 Sep 2026",topic:"Data Appreciation",g:[4,9,16,17],id:"event-numbers-to-narratives"},
+      {d:"09",m:"SEP 2026",t:"Research Leadership in Action",r:"Wed 09 Sep 2026",topic:"Academic Heads",g:[4,9,17],id:"event-research-leadership"},
+      {d:"09",m:"SEP 2026",t:"From Innovation to Opportunity: Advancing Ideas for Possible Funding",r:"Wed 09 - Fri 11 Sep 2026",topic:"Cagayan Valley STI Week",g:[2,3,4,9,17],id:"event-innovation-to-opportunity"},
+      {d:"09",m:"SEP 2026",t:"Research That Sees Everyone: Advancing Knowledge through a Gender-Responsive Lens",r:"Wed 09 - Thu 10 Sep 2026",topic:"Regional Seminar-Training",g:[4,5,9,17],id:"event-research-sees-everyone"},
+      {d:"28",m:"AUG 2026",t:"From Samples to Statistics: Turning Data into Meaningful Discoveries",r:"Fri 28 Aug 2026",topic:"High School Research Summit — Episode 2",g:[4,9,17],id:"event-samples-to-statistics"},
+      {d:"28",m:"AUG 2026",t:"Pick a Goal. Raise Your Flag. Make Your Impact.",r:"Fri 28 Aug 2026",topic:"Research for the Goals",g:[4,9,16,17],id:"event-sdg-spot-launch"},
+      {d:"—",m:"SDG SPOT @ RDC",t:"Every Study. A Goal. An Impact. (BS Tourism Management)",r:"SDG Research Snap, one of the activities under SDG SPOT @ RDC",topic:"BS Tourism Management",g:[4,9,16,17],id:"event-sdg-research-snap-tourism"},
+      {d:"24",m:"AUG 2026",t:"Equipping Students for Meaningful Community Engagement",r:"Mon 24 Aug 2026",topic:"Community Extension Services",g:[4,16,17],id:"event-equipping-students"},
+      {d:"24",m:"AUG 2026",t:"Strengthening Research Through Shared Direction",r:"Mon 24 Aug 2026",topic:"MCNP–ISAP RDC",g:[4,9,16,17],id:"event-general-assembly"},
+      {d:"19",m:"AUG 2026",t:"Advancing Health Research Through Collaboration",r:"Wed 19 - Thu 20 Aug 2026",topic:"RRF Technical Review",g:[4,17],id:"event-health-research-collaboration"},
+      {d:"—",m:"ICIR 2026",t:"Research for Sustainable Impact",r:"1st ISAP-K Conference on Interdisciplinary Research",topic:"ISAP-K Conference",g:[4,9,11,17],id:"event-icir-2026"}
+    ];
+    var common="The MCNP &amp; ISAP Research &amp; Development Center brings this goal into its research and community extension work in Cagayan Valley, turning academic, clinical and legal expertise into support for the communities that need it most.";
+
+    function $(id){return document.getElementById(id);}
+    function badge(n){return '<span class="un-badge" style="--c:'+G[n-1][2]+'">'+n+'</span>';} 
+    function eventUrl(item){return "news-events.html#" + item.id;}
+
+    $("un-goalbar").firstElementChild.innerHTML = G.map(function(goal, i){
+      return '<a href="?goal=' + (i + 1) + '" data-goal="' + (i + 1) + '" style="--c:' + goal[2] + '" aria-label="Goal ' + (i + 1) + ': ' + goal[0] + '">' + (i + 1) + '</a>';
+    }).join("");
+
+    function show(n){
+      var goal = G[n - 1];
+      var nextGoal = n === 17 ? 1 : n + 1;
+      var prevGoal = n === 1 ? 17 : n - 1;
+      $("un-page").style.setProperty("--goal", goal[2]);
+      $("un-num").textContent = n;
+      $("un-title").textContent = goal[1];
+      var nextLink = $("un-next");
+      nextLink.dataset.goal = String(nextGoal);
+      nextLink.href = "?goal=" + nextGoal;
+      nextLink.innerHTML = (n === 17 ? "Back to Goal 1" : "Next") + " &rarr;";
+      var prevLink = $("un-prev");
+      prevLink.dataset.goal = String(prevGoal);
+      prevLink.href = "?goal=" + prevGoal;
+      prevLink.innerHTML = "&larr; " + (n === 1 ? "Back to Goal 17" : "Previous");
+      $("un-ov").innerHTML = '<p>' + goal[3] + '</p><p>' + common + '</p>';
+
+      var list = E.filter(function(item){ return item.g.indexOf(n) > -1; });
+
+      // Related Topics: the actual news/event stories tagged with this goal, each linking
+      // straight to its full write-up on news-events.html.
+      $("un-topic").innerHTML = list.length ? list.map(function(item){
+        return '<li><a href="' + eventUrl(item) + '"><span class="un-related-date">' + item.topic + '</span><span class="un-related-title">' + item.t + '</span></a></li>';
+      }).join("") : '<li><p class="un-related-empty">No related stories are tagged with this goal yet. <a href="news-events.html">Browse all news &amp; events</a>.</p></li>';
+
+      // Events: same filtered list, shown as full date cards that link to the matching
+      // article on news-events.html instead of standing alone.
+      $("un-events").innerHTML = list.length ? list.map(function(item){
+        return '<a class="un-ev" href="' + eventUrl(item) + '"><div class="un-day">' + item.d + '</div><div class="un-mon">' + item.m + '</div>' + (item.topic ? '<div class="un-ev-topic">' + item.topic + '</div>' : '') + '<h3>' + item.t + '</h3><div class="un-range">' + item.r + '</div><div class="un-ev-link">Read full story &rarr;</div><div class="un-ev-goals"><small>Related Goals</small>' + item.g.map(badge).join("") + '</div></a>';
+      }).join("") : '<p class="un-empty">No events are listed for this goal yet. <a href="news-events.html">Browse all events</a>.</p>';
+
+      Array.prototype.forEach.call($("un-goalbar").querySelectorAll("a"), function(link){
+        if (Number(link.dataset.goal) === n) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      document.title = "Goal " + n + ": " + goal[0] + " | SDG Advocacies | MCNP & ISAP RDC";
+    }
+
+    function fromUrl(){
+      var q = parseInt(new URLSearchParams(location.search).get("goal"), 10);
+      return q >= 1 && q <= 17 ? q : 1;
+    }
+
+    document.addEventListener("click", function(e){
+      var link = e.target.closest("[data-goal]");
+      if (!link) return;
+      e.preventDefault();
+      var n = Number(link.dataset.goal);
+      history.pushState(null, "", "?goal=" + n);
+      show(n);
+      window.scrollTo(0, 0);
+    });
+
+    window.addEventListener("popstate", function(){
+      show(fromUrl());
+    });
+
+    show(fromUrl());
+  })();
+  </script>
+
   <script src="js/main.js"></script>
 </body>
 </html>
-
