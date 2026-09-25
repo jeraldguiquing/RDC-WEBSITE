@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Journal of Admin | Digital FlipBook Publications - MCNP &amp; ISAP</title>
+  <meta name="description" content="Access the interactive digital FlipBook edition of the Journal of Admin, presenting institutional administration and multidisciplinary research by faculty.">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Journal of Admin | Digital FlipBook Publications - MCNP &amp; ISAP">
+  <meta property="og:description" content="Access the interactive digital FlipBook edition of the Journal of Admin, presenting faculty and institutional research.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Journal of Admin | Digital FlipBook Publications - MCNP &amp; ISAP">
+  <meta name="twitter:description" content="Interactive digital FlipBook edition of the Journal of Admin.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
   <style>
     .flipbook-tabs {
@@ -45,7 +62,7 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
         <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
@@ -95,16 +112,20 @@
 
             <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -116,16 +137,20 @@
 
             <!-- Dropdown: JOURNAL -->
             <li class="nav-item dropdown">
-              <a href="journal-admin.html" class="nav-link active">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link active">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
-                <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="dropdown-link">
-                  <span>MCNP Health Journal Portal ↗</span>
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
+                <a href="journal-mcnp.html" class="dropdown-link">
+                  <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
-                <a href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer" class="dropdown-link">
-                  <span>ISAP DAWA Research Journal ↗</span>
+                <a href="journal-isap.html" class="dropdown-link">
+                  <span>ISAP Multidisciplinary Journal</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
                 <a href="journal-admin.html" class="dropdown-link active">
@@ -182,6 +207,14 @@
   <main class="section">
     <div class="container">
       
+      <!-- Journal Cross-Navigation Tabs -->
+      <div class="journal-nav-tabs">
+        <a href="journal.html" class="journal-nav-tab">📚 All Journals Portal</a>
+        <a href="journal-mcnp.html" class="journal-nav-tab">🔬 MCNP Health Journal</a>
+        <a href="journal-isap.html" class="journal-nav-tab">⚖️ ISAP DAWA Journal</a>
+        <a href="journal-admin.html" class="journal-nav-tab active">📖 Journal in Admin (FlipBook)</a>
+      </div>
+
       <!-- FlipBook Interactive Viewer Showcase -->
       <div style="background: var(--white); border-radius: 16px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); margin-bottom: 3rem;">
         
@@ -356,8 +389,10 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
+            <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -373,7 +408,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;"><a href="mailto:researchoffice@mcnp.edu.ph" style="color: inherit;">researchoffice@mcnp.edu.ph</a> | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>

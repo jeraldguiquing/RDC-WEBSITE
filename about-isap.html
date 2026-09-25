@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About ISAP | International School of Asia and the Pacific</title>
+  <meta name="description" content="Learn about the International School of Asia and the Pacific (ISAP) — a distinguished institution for multidisciplinary education, criminological research, accountancy, customs, and business leadership in Region II.">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About ISAP | International School of Asia and the Pacific">
+  <meta property="og:description" content="Discover ISAP — a distinguished institution for multidisciplinary education, criminological research, and business leadership in Region II.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About ISAP | International School of Asia and the Pacific">
+  <meta name="twitter:description" content="Discover ISAP — a distinguished institution for multidisciplinary education, criminological research, and business leadership in Region II.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +30,7 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
         <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
@@ -61,16 +78,20 @@
 
             <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -82,10 +103,14 @@
 
             <!-- Dropdown: JOURNAL -->
             <li class="nav-item dropdown">
-              <a href="journal-mcnp.html" class="nav-link">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="journal-mcnp.html" class="dropdown-link">
                   <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
@@ -138,7 +163,7 @@
   <!-- Main Content -->
   <main class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start;">
+      <div class="about-layout-grid">
         <div>
           <span class="section-tag" style="color: var(--isap-blue); background: rgba(11, 60, 93, 0.1);">Institution Overview</span>
           <h2 class="section-title">A Distinctive Institution for Multidisciplinary Excellence</h2>
@@ -269,7 +294,7 @@
 
         <!-- Sidebar -->
         <div>
-          <div style="background: var(--white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow); margin-bottom: 2rem;">
+          <div style="background: var(--white); border-radius: 12px; padding: 1.75rem; border: 1px solid var(--border-color); box-shadow: var(--card-shadow);">
             <h4 style="font-size: 1.1rem; color: var(--isap-blue); margin-bottom: 1rem;">ISAP Quick Facts</h4>
             <ul style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.88rem; color: #475569;">
               <li><strong>Established:</strong> 1998</li>
@@ -278,14 +303,6 @@
               <li><strong>Flagship Distinction:</strong> Consistent Top Performing Criminology School in the Philippines</li>
               <li><strong>Community Ties:</strong> Direct intelligence &amp; policy partner for PNP, BJMP, and local government units in Region II</li>
             </ul>
-          </div>
-
-          <div style="background: linear-gradient(135deg, var(--isap-blue-dark), #1e40af); color: #fff; border-radius: 12px; padding: 1.75rem;">
-            <h4 style="font-size: 1.1rem; color: var(--gold); margin-bottom: 0.75rem;">Inter-Institutional Collaboration</h4>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: #e2e8f0; margin-bottom: 1.25rem;">
-              ISAP shares the Alimannao Hills hilltop campus with MCNP, fostering interdisciplinary breakthroughs where health sciences intersect with public order, forensic toxicology, and community resilience.
-            </p>
-            <a href="about-mcnp.html" class="btn btn-sm btn-gold" style="width: 100%; justify-content: center;">Learn About MCNP &rarr;</a>
           </div>
         </div>
       </div>
@@ -305,8 +322,10 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
+            <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -322,7 +341,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;"><a href="mailto:researchoffice@mcnp.edu.ph" style="color: inherit;">researchoffice@mcnp.edu.ph</a> | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>

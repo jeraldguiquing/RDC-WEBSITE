@@ -182,8 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (tabBtns.length > 0 && articleCards.length > 0) {
     tabBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        tabBtns.forEach((b) => b.classList.remove('active', 'isap-active'));
-        btn.classList.add(btn.dataset.filter === 'isap' ? 'isap-active' : 'active');
+        tabBtns.forEach((b) => b.classList.remove('active', 'isap-active', 'admin-active'));
+        if (btn.dataset.filter === 'isap') {
+          btn.classList.add('isap-active');
+        } else if (btn.dataset.filter === 'admin') {
+          btn.classList.add('admin-active');
+        } else {
+          btn.classList.add('active');
+        }
 
         const filter = btn.getAttribute('data-filter');
         articleCards.forEach((card) => {
@@ -283,32 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 300);
     }, 4000);
   };
-
-  const sharedEventGallery = Array.from({ length: 11 }, (_, photoIndex) => `
-    <div class="event-gallery-slide${photoIndex === 0 ? ' active' : ''}">
-      <img src="upload/${photoIndex + 1}.jpg" alt="Event photo ${photoIndex + 1}">
-    </div>
-  `).join('');
-
-  document.querySelectorAll('.news-grid .news-card[data-has-gallery="true"]').forEach((card) => {
-    if (card.querySelector('[data-gallery-slider]')) return;
-
-    const galleryMarkup = `
-      <div class="event-gallery-slider" data-gallery-slider aria-label="Event photo slider">
-        <button class="event-gallery-control prev" type="button" data-gallery-prev aria-label="Previous event photo">&#8249;</button>
-        ${sharedEventGallery}
-        <button class="event-gallery-control next" type="button" data-gallery-next aria-label="Next event photo">&#8250;</button>
-        <button class="event-gallery-fullscreen" type="button" data-gallery-fullscreen aria-label="Open gallery fullscreen" title="Open gallery fullscreen">&#9974;</button>
-      </div>
-    `;
-    const content = card.querySelector('.news-content > div');
-    const details = content?.querySelector('details');
-    if (details) {
-      details.insertAdjacentHTML('beforebegin', galleryMarkup);
-    } else {
-      content?.insertAdjacentHTML('beforeend', galleryMarkup);
-    }
-  });
 
   // ===== Global Image Lightbox Modal =====
   let lightboxEl = document.querySelector('.rdc-lightbox-overlay');
@@ -695,3 +675,16 @@ window.filterSDG = function (type, btn) {
     }
   });
 };
+
+// 10. RDC SOP Stage Accordion Toggle (Expand / Collapse All)
+window.toggleAllSop = function (expand) {
+  const stages = document.querySelectorAll('.rdc-sop-stage');
+  stages.forEach((stage) => {
+    if (expand) {
+      stage.setAttribute('open', '');
+    } else {
+      stage.removeAttribute('open');
+    }
+  });
+};
+

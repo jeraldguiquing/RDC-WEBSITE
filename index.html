@@ -4,8 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RDC | Research &amp; Development Center - MCNP &amp; ISAP</title>
-  <meta name="description" content="Official Research and Development Center (RDC) of Medical Colleges of Northern Philippines (MCNP) and International School of Asia and the Pacific (ISAP).">
+  <meta name="description" content="Official Research and Development Center (RDC) of Medical Colleges of Northern Philippines (MCNP) and International School of Asia and the Pacific (ISAP). Fostering innovation, scientific ethics, and community progress.">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RDC | Research &amp; Development Center - MCNP &amp; ISAP">
+  <meta property="og:description" content="Official Research &amp; Development Center of Medical Colleges of Northern Philippines and International School of Asia and the Pacific. Fostering research innovation, ethics, and community leadership.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RDC | Research &amp; Development Center - MCNP &amp; ISAP">
+  <meta name="twitter:description" content="Official Research &amp; Development Center of MCNP and ISAP. Fostering research innovation, ethics, and community leadership.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     a.sdg-goal-card:not(.sdg-goal-cta){text-decoration:none}
     .sdg-goal-card{display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -64,17 +81,22 @@
               </div>
             </li>
 
+            <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -85,10 +107,14 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a href="journal-mcnp.html" class="nav-link">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="journal-mcnp.html" class="dropdown-link">
                   <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
@@ -139,6 +165,17 @@
           </p>
           <div class="hero-actions">
             <a href="rdc-agenda.html" class="btn btn-gold">Explore Research Agenda &rarr;</a>
+            <a href="journal.html" class="btn btn-outline-white">Browse Research Journals &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Official RDC Institutional Emblem -->
+        <div class="hero-visual">
+          <div class="hero-logo-wrapper">
+            <div class="hero-logo-glow"></div>
+            <img src="assets/rdc-logo.png" alt="MCNP &amp; ISAP Research &amp; Development Center Official Emblem" class="hero-rdc-logo">
+            <div class="hero-logo-tagline">
+            </div>
           </div>
         </div>
       </div>
@@ -443,12 +480,16 @@
         <button class="tab-btn active" data-filter="all">All Articles</button>
         <button class="tab-btn" data-filter="mcnp">MCNP Health Journal</button>
         <button class="tab-btn" data-filter="isap">ISAP Multidisciplinary Journal</button>
+        <button class="tab-btn" data-filter="admin">Journal in Admin (FlipBook)</button>
       </div>
 
       <div class="articles-grid">
         <article class="article-card" data-journal="mcnp">
           <div class="article-header">
             <span class="article-journal-badge badge-mcnp">MCNP Health Journal • Vol. 8 Issue 2</span>
+            <div class="article-sdg-strip">
+              <span class="badge-sdg" style="background:#4c9f38;">SDG 3: Good Health</span>
+            </div>
             <h3 class="article-title">Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan</h3>
             <p class="article-authors">A. R. Pascual, RMT, MSMLS; D. C. Agbisit, MD; E. K. Guzman, PharmD</p>
             <p class="article-abstract">
@@ -457,13 +498,16 @@
           </div>
           <div class="article-meta">
             <span>DOI: 10.5281/mcnp.2026.0821</span>
-            <a href="journal-mcnp.html" style="color: var(--mcnp-green); font-weight: 700;">View Paper &rarr;</a>
+            <a href="journal.html#abstract-pascual-2026" style="color: var(--mcnp-green); font-weight: 700;">View in Portal &rarr;</a>
           </div>
         </article>
 
         <article class="article-card" data-journal="isap">
           <div class="article-header">
             <span class="article-journal-badge badge-isap">ISAP Multidisciplinary • Vol. 11 Issue 1</span>
+            <div class="article-sdg-strip">
+              <span class="badge-sdg" style="background:#00689d;">SDG 16: Peace &amp; Justice</span>
+            </div>
             <h3 class="article-title">Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities</h3>
             <p class="article-authors">R. S. Duldulao, Ph.D. Crim; M. L. Soriano, CSP; J. V. Mallillin, MSIT</p>
             <p class="article-abstract">
@@ -472,13 +516,17 @@
           </div>
           <div class="article-meta">
             <span>DOI: 10.5281/isap.2026.1104</span>
-            <a href="journal-isap.html" style="color: var(--isap-blue); font-weight: 700;">View Paper &rarr;</a>
+            <a href="journal.html#abstract-duldulao-2026" style="color: var(--isap-blue); font-weight: 700;">View in Portal &rarr;</a>
           </div>
         </article>
 
         <article class="article-card" data-journal="mcnp">
           <div class="article-header">
             <span class="article-journal-badge badge-mcnp">MCNP Health Journal • Vol. 8 Issue 1</span>
+            <div class="article-sdg-strip">
+              <span class="badge-sdg" style="background:#4c9f38;">SDG 3: Good Health</span>
+              <span class="badge-sdg" style="background:#f36e24;">SDG 9: Innovation</span>
+            </div>
             <h3 class="article-title">Diagnostic Accuracy of Low-Dose Digital Radiography in Early Pulmonary Infiltrate Detection</h3>
             <p class="article-authors">C. M. Baloran, RRT, MSRT; F. T. Macarubbo, MD</p>
             <p class="article-abstract">
@@ -487,15 +535,39 @@
           </div>
           <div class="article-meta">
             <span>DOI: 10.5281/mcnp.2026.0815</span>
-            <a href="journal-mcnp.html" style="color: var(--mcnp-green); font-weight: 700;">View Paper &rarr;</a>
+            <a href="journal.html#abstract-baloran-2026" style="color: var(--mcnp-green); font-weight: 700;">View in Portal &rarr;</a>
+          </div>
+        </article>
+
+        <article class="article-card" data-journal="admin">
+          <div class="article-header">
+            <span class="article-journal-badge badge-admin">Journal in Admin • Vol. 1 Issue 1</span>
+            <div class="article-sdg-strip">
+              <span class="badge-sdg" style="background:#c5192d;">SDG 4: Quality Education</span>
+              <span class="badge-sdg" style="background:#f36e24;">SDG 9: Innovation</span>
+            </div>
+            <h3 class="article-title">Higher Education Governance and Institutional Research Productivity in Region II Private Higher Education</h3>
+            <p class="article-authors">Dr. Christian R. Guzman, PhD; M. L. Soriano, CSP; R. V. Mallillin, MSMLS</p>
+            <p class="article-abstract">
+              Evaluating strategic research seed grants, institutional ethics review accreditation timelines, and faculty publication outputs across 14 colleges in Cagayan Valley.
+            </p>
+          </div>
+          <div class="article-meta">
+            <span>DOI: 10.5281/admin.2026.0101</span>
+            <a href="journal-admin.html" style="color: var(--gold, #d97706); font-weight: 700;">Read FlipBook &rarr;</a>
           </div>
         </article>
       </div>
 
-      <div style="text-align: center; margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href="journal-mcnp.html" class="btn btn-mcnp">MCNP Journal Portal</a>
-        <a href="journal-isap.html" class="btn btn-isap">ISAP Journal Portal</a>
-        <a href="journal-admin.html" class="btn btn-gold">Journal of Admin (FlipBook)</a>
+      <div style="text-align: center; margin-top: 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+        <a href="journal.html" class="btn btn-mcnp" style="font-size: 1rem; padding: 0.85rem 2rem; font-weight: 700; box-shadow: 0 4px 14px rgba(13, 92, 58, 0.25);">
+          Explore All Journals Portal (Overview) &rarr;
+        </a>
+        <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="journal-mcnp.html" class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);">MCNP Health Journal</a>
+          <a href="journal-isap.html" class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);">ISAP Multidisciplinary</a>
+          <a href="journal-admin.html" class="btn btn-sm btn-gold">Journal in Admin (FlipBook)</a>
+        </div>
       </div>
     </div>
   </section>
@@ -542,7 +614,6 @@
             <span class="news-date-badge">Nov 17, 2024</span>
             <div class="news-thumb-text">
               <span class="news-thumb-pill">Regional Partnership</span>
-              <span class="news-thumb-pill" style="background: rgba(13, 92, 58, 0.92); margin-left: 0.3rem;">📷 11 Photos</span>
               <h4 class="news-thumb-topic">Collaborative Research</h4>
             </div>
           </div>
@@ -555,7 +626,7 @@
               </p>
             </div>
             <div class="news-footer-action">
-              <a href="news-events.html#event-cbcp-ust-collab" class="news-link">Browse 11 Photos &rarr;</a>
+              <a href="news-events.html#event-cbcp-ust-collab" class="news-link">Read Full Story &rarr;</a>
               <span class="news-meta-type">Archdiocese Meeting</span>
             </div>
           </div>
@@ -581,7 +652,7 @@
               </p>
             </div>
             <div class="news-footer-action">
-              <a href="news-events.html#event-cbcp-ust-collab" class="news-link">View Competition Story &rarr;</a>
+              <a href="news-events.html#event-student-stats-28th" class="news-link">View Competition Story &rarr;</a>
               <span class="news-meta-type">Regional Awardees</span>
             </div>
           </div>
@@ -647,6 +718,7 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
             <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
@@ -656,11 +728,12 @@
         <div class="footer-col">
           <h5>Journals &amp; Publications</h5>
           <ul class="footer-links">
+            <li><a href="journal.html">&rarr; All Journals Portal (Overview)</a></li>
             <li><a href="journal-mcnp.html">&rarr; MCNP Health Journal</a></li>
             <li><a href="journal-isap.html">&rarr; ISAP Multidisciplinary</a></li>
             <li><a href="journal-admin.html">&rarr; Journal of Admin (FlipBook)</a></li>
             <li><a href="https://online.fliphtml5.com/ffqhu/swzy/#p=1" target="_blank" rel="noopener noreferrer">&rarr; Direct FlipHTML5 ↗</a></li>
-            <li><a href="news-events.html">&rarr; News and Events</a></li>
+            <li><a href="news-events.html">&rarr; News &amp; Events</a></li>
           </ul>
         </div>
 

@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISAP Multidisciplinary Journal | RDC Publications</title>
+  <meta name="description" content="Explore ISAP multidisciplinary peer-reviewed journals: THE BORDERLESS (Customs), PLUMA (Education), HOSPITALITY UNCORKED (HM), TAGATUOS (Accountancy), POLICE (Criminology), and more.">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ISAP Multidisciplinary Journal | RDC Publications">
+  <meta property="og:description" content="Official peer-reviewed multidisciplinary publications of ISAP across criminology, business, education, social work, and hospitality.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ISAP Multidisciplinary Journal | RDC Publications">
+  <meta name="twitter:description" content="Official peer-reviewed multidisciplinary publications of ISAP.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +30,7 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
         <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
@@ -62,16 +79,20 @@
 
             <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -83,10 +104,14 @@
 
             <!-- Dropdown: JOURNAL -->
             <li class="nav-item dropdown">
-              <a href="journal-isap.html" class="nav-link active">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link active">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="journal-mcnp.html" class="dropdown-link">
                   <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
@@ -139,6 +164,15 @@
   <!-- Main Content -->
   <main class="section">
     <div class="container">
+
+      <!-- Journal Cross-Navigation Tabs -->
+      <div class="journal-nav-tabs">
+        <a href="journal.html" class="journal-nav-tab">📚 All Journals Portal</a>
+        <a href="journal-mcnp.html" class="journal-nav-tab">🔬 MCNP Health Journal</a>
+        <a href="journal-isap.html" class="journal-nav-tab active">⚖️ ISAP DAWA Journal</a>
+        <a href="journal-admin.html" class="journal-nav-tab">📖 Journal in Admin (FlipBook)</a>
+      </div>
+
       <div style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 3rem; align-items: start;">
         <div>
           <!-- Official ISAP DAWA Journal Portal Link Banner -->
@@ -160,13 +194,17 @@
               <h2 style="font-size: 1.45rem; color: #1e293b; margin-top: 0.5rem;">Criminological Advancements, Public Safety &amp; Tech Systems</h2>
               <p style="font-size: 0.88rem; color: var(--muted-text);">Published by ISAP Research &amp; Development Center • Open Access</p>
             </div>
-            <a class="btn btn-isap" href="assets/journals/isap-vol11-issue1-full.pdf" download>
-              Download Full Issue (PDF)
+            <a class="btn btn-isap" href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">
+              Access Issue in Journal System ↗
             </a>
           </div>
 
           <!-- Published Papers in this Issue -->
-          <h3 style="font-size: 1.35rem; color: #1e293b; margin-bottom: 1.25rem;">Articles in this Issue</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.35rem; color: #1e293b; margin: 0;">Articles in this Issue</h3>
+            <span style="font-size: 0.82rem; color: #64748b; font-weight: 600;">4 Peer-Reviewed Papers</span>
+          </div>
+
           <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;">
 
             <!-- Paper 1 -->
@@ -175,13 +213,21 @@
                 <span class="article-journal-badge badge-isap">Research Article • Criminal Justice</span>
                 <h4 class="article-title">Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities</h4>
                 <p class="article-authors">R. S. Duldulao, Ph.D. Crim; M. L. Soriano, CSP; J. V. Mallillin, MSIT</p>
-                <p class="article-abstract">
-                  Evaluated predictive analytical models applied to five years of barangay blotter datasets in Cagayan Valley. Findings demonstrate that proactive neighborhood watch training combined with GIS hot-spot reporting reduced property crimes by 34% over a 24-month monitoring window.
-                </p>
+                <div class="article-abstract-content" id="abstract-duldulao-2026">
+                  <p class="article-abstract">
+                    Evaluated predictive analytical models applied to five years of barangay blotter datasets in Cagayan Valley. Findings demonstrate that proactive neighborhood watch training combined with GIS hot-spot reporting reduced property crimes by 34% over a 24-month monitoring window.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('duldulao-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/isap.2026.1104 • Pages 1–16</span>
-                <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="assets/journals/isap-2026-1104-duldulao-et-al.pdf" download>Download PDF</a>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('duldulao-2026')">Cite</button>
+                  <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">View in OJS ↗</a>
+                </div>
               </div>
             </div>
 
@@ -191,13 +237,21 @@
                 <span class="article-journal-badge badge-isap">Research Article • Information Technology &amp; Forensics</span>
                 <h4 class="article-title">Cryptographic Hash Validation and Chain-of-Custody Integrity in Mobile Forensics Investigations</h4>
                 <p class="article-authors">E. V. Pasion, DIT; B. K. Tolentino, MSCS</p>
-                <p class="article-abstract">
-                  Proposes an automated blockchain-anchored ledger protocol for preserving digital forensic evidence acquired from suspect cellular devices during Philippine National Police cyber-crime raids, guaranteeing tamper-proof verification in judicial trials.
-                </p>
+                <div class="article-abstract-content" id="abstract-pasion-2026">
+                  <p class="article-abstract">
+                    Proposes an automated blockchain-anchored ledger protocol for preserving digital forensic evidence acquired from suspect cellular devices during Philippine National Police cyber-crime raids, guaranteeing tamper-proof verification in judicial trials.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('pasion-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/isap.2026.1105 • Pages 17–31</span>
-                <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="assets/journals/isap-2026-1105-pasion-tolentino.pdf" download>Download PDF</a>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('pasion-2026')">Cite</button>
+                  <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">View in OJS ↗</a>
+                </div>
               </div>
             </div>
 
@@ -207,13 +261,21 @@
                 <span class="article-journal-badge badge-isap">Research Article • Customs Administration</span>
                 <h4 class="article-title">Post-Clearance Audit Compliance and Revenue Leakage Prevention at Northern Luzon Maritime Ports</h4>
                 <p class="article-authors">Atty. K. M. Bautista, LCB, MBA; G. N. Ramirez, PhD</p>
-                <p class="article-abstract">
-                  Investigated post-clearance audit mechanisms at Port of Irene and Port of Aparri, measuring the deterrence effect of real-time electronic declaration audits on tariff misclassification among regional industrial importers.
-                </p>
+                <div class="article-abstract-content" id="abstract-bautista-2026">
+                  <p class="article-abstract">
+                    Investigated post-clearance audit mechanisms at Port of Irene and Port of Aparri, measuring the deterrence effect of real-time electronic declaration audits on tariff misclassification among regional industrial importers.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('bautista-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/isap.2026.1106 • Pages 32–48</span>
-                <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="assets/journals/isap-2026-1106-bautista-ramirez.pdf" download>Download PDF</a>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('bautista-2026')">Cite</button>
+                  <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">View in OJS ↗</a>
+                </div>
               </div>
             </div>
 
@@ -223,24 +285,25 @@
                 <span class="article-journal-badge badge-isap">Research Article • Teacher Education &amp; Pedagogy</span>
                 <h4 class="article-title">Cognitive Engagement and Critical Thinking in Simulation-Based Law Enforcement Training</h4>
                 <p class="article-authors">Prof. H. J. Almazan, EdD; C. R. Guzman, PhD</p>
-                <p class="article-abstract">
-                  Assessed the tactical decision-making accuracy of 180 criminology interns subjected to high-stress shoot/don't-shoot simulated virtual environments compared to traditional lecture-based firearm instruction protocols.
-                </p>
+                <div class="article-abstract-content" id="abstract-almazan-2026">
+                  <p class="article-abstract">
+                    Assessed the tactical decision-making accuracy of 180 criminology interns subjected to high-stress shoot/don't-shoot simulated virtual environments compared to traditional lecture-based firearm instruction protocols.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('almazan-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/isap.2026.1107 • Pages 49–64</span>
-                <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="assets/journals/isap-2026-1107-almazan-guzman.pdf" download>Download PDF</a>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('almazan-2026')">Cite</button>
+                  <a class="btn btn-sm btn-outline-white" style="color: var(--isap-blue); border-color: var(--isap-blue);" href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">View in OJS ↗</a>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Submission CTA -->
-          <div style="background: #f8fafc; border: 2px dashed var(--isap-blue); border-radius: 12px; padding: 2.25rem; text-align: center;">
-            <h3 style="color: var(--isap-blue); margin-bottom: 0.5rem;">Publish Your Multidisciplinary Research</h3>
-            <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-              Open call for manuscripts in Criminology, Security Studies, Customs, Computing, Education, Business Administration, and Social Sciences.
-            </p>
-          </div>
         </div>
 
         <!-- Sidebar Information -->
@@ -287,8 +350,8 @@
             <p style="font-size: 0.82rem; color: #1e3a8a; line-height: 1.5; margin-bottom: 1rem;">
               All submissions must adhere to APA 7th Edition referencing, Times New Roman 12pt, double-spaced, 4,000–7,500 words including tables and citations.
             </p>
-            <a class="btn btn-sm btn-isap" style="width: 100%; justify-content: center;" href="assets/templates/isap-manuscript-template.docx" download>
-              Download Word Template (.docx)
+            <a class="btn btn-sm btn-isap" style="width: 100%; justify-content: center; text-decoration: none;" href="https://dawa.isap.edu.ph/" target="_blank" rel="noopener noreferrer">
+              Author Guidelines &amp; Submission ↗
             </a>
           </div>
         </div>
@@ -309,8 +372,10 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
+            <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -326,7 +391,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;"><a href="mailto:researchoffice@mcnp.edu.ph" style="color: inherit;">researchoffice@mcnp.edu.ph</a> | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>
@@ -336,6 +401,147 @@
     </div>
   </footer>
 
+  <!-- Interactive Citation Modal -->
+  <div class="citation-modal-overlay" id="citationModalOverlay" role="dialog" aria-labelledby="citationModalTitle" aria-modal="true">
+    <div class="citation-modal">
+      <div class="citation-modal-head">
+        <h3 id="citationModalTitle"><i class="fas fa-quote-left"></i> Generate Citation</h3>
+        <button type="button" class="citation-modal-close" id="citationModalClose" aria-label="Close citation modal">&times;</button>
+      </div>
+      <div class="citation-modal-body">
+        <p style="font-size: 0.88rem; color: #475569; margin-bottom: 1rem;" id="citationArticleTitle">
+          Article Title
+        </p>
+
+        <!-- Citation Format Selector Tabs -->
+        <div class="citation-format-tabs" role="tablist">
+          <button type="button" class="citation-format-btn active" data-format="apa">APA (7th)</button>
+          <button type="button" class="citation-format-btn" data-format="mla">MLA (9th)</button>
+          <button type="button" class="citation-format-btn" data-format="chicago">Chicago</button>
+          <button type="button" class="citation-format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+
+        <div class="citation-code-block" id="citationPreviewText">
+          Loading citation...
+        </div>
+
+        <div class="citation-modal-actions">
+          <button type="button" class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="closeCitationModal()">
+            Close
+          </button>
+          <button type="button" class="btn btn-sm btn-isap" id="copyCitationBtn">
+            <i class="fas fa-copy"></i> Copy Citation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var CITATIONS = {
+      'duldulao-2026': {
+        title: 'Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities',
+        apa: 'Duldulao, R. S., Soriano, M. L., & Mallillin, J. V. (2026). Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities. ISAP DAWA Multidisciplinary Research Journal, 11(1), 1-16. https://doi.org/10.5281/isap.2026.1104',
+        mla: 'Duldulao, R. S., M. L. Soriano, and J. V. Mallillin. "Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities." ISAP DAWA Multidisciplinary Research Journal, vol. 11, no. 1, 2026, pp. 1-16. DOI: 10.5281/isap.2026.1104.',
+        chicago: 'Duldulao, R. S., M. L. Soriano, and J. V. Mallillin. "Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities." ISAP DAWA Multidisciplinary Research Journal 11, no. 1 (2026): 1-16.',
+        bibtex: '@article{duldulao2026policing,\n  author = {Duldulao, R. S. and Soriano, M. L. and Mallillin, J. V.},\n  title = {Predictive Profiling and Community Policing Frameworks in Cagayan Valley Rural Municipalities},\n  journal = {ISAP DAWA Multidisciplinary Research Journal},\n  volume = {11},\n  number = {1},\n  pages = {1--16},\n  year = {2026},\n  doi = {10.5281/isap.2026.1104}\n}'
+      },
+      'pasion-2026': {
+        title: 'Cryptographic Hash Validation and Chain-of-Custody Integrity in Mobile Forensics Investigations',
+        apa: 'Pasion, E. V., & Tolentino, B. K. (2026). Cryptographic Hash Validation and Chain-of-Custody Integrity in Mobile Forensics Investigations. ISAP DAWA Multidisciplinary Research Journal, 11(1), 17-31. https://doi.org/10.5281/isap.2026.1105',
+        mla: 'Pasion, E. V., and B. K. Tolentino. "Cryptographic Hash Validation and Chain-of-Custody Integrity in Mobile Forensics Investigations." ISAP DAWA Multidisciplinary Research Journal, vol. 11, no. 1, 2026, pp. 17-31. DOI: 10.5281/isap.2026.1105.',
+        chicago: 'Pasion, E. V., and B. K. Tolentino. "Cryptographic Hash Validation and Chain-of-Custody Integrity in Mobile Forensics Investigations." ISAP DAWA Multidisciplinary Research Journal 11, no. 1 (2026): 17-31.',
+        bibtex: '@article{pasion2026forensics,\n  author = {Pasion, E. V. and Tolentino, B. K.},\n  title = {Cryptographic Hash Validation and Chain-of-Custody Integrity in Mobile Forensics Investigations},\n  journal = {ISAP DAWA Multidisciplinary Research Journal},\n  volume = {11},\n  number = {1},\n  pages = {17--31},\n  year = {2026},\n  doi = {10.5281/isap.2026.1105}\n}'
+      },
+      'bautista-2026': {
+        title: 'Post-Clearance Audit Compliance and Revenue Leakage Prevention at Northern Luzon Maritime Ports',
+        apa: 'Bautista, K. M., & Ramirez, G. N. (2026). Post-Clearance Audit Compliance and Revenue Leakage Prevention at Northern Luzon Maritime Ports. ISAP DAWA Multidisciplinary Research Journal, 11(1), 32-48. https://doi.org/10.5281/isap.2026.1106',
+        mla: 'Bautista, K. M., and G. N. Ramirez. "Post-Clearance Audit Compliance and Revenue Leakage Prevention at Northern Luzon Maritime Ports." ISAP DAWA Multidisciplinary Research Journal, vol. 11, no. 1, 2026, pp. 32-48. DOI: 10.5281/isap.2026.1106.',
+        chicago: 'Bautista, K. M., and G. N. Ramirez. "Post-Clearance Audit Compliance and Revenue Leakage Prevention at Northern Luzon Maritime Ports." ISAP DAWA Multidisciplinary Research Journal 11, no. 1 (2026): 32-48.',
+        bibtex: '@article{bautista2026customs,\n  author = {Bautista, K. M. and Ramirez, G. N.},\n  title = {Post-Clearance Audit Compliance and Revenue Leakage Prevention at Northern Luzon Maritime Ports},\n  journal = {ISAP DAWA Multidisciplinary Research Journal},\n  volume = {11},\n  number = {1},\n  pages = {32--48},\n  year = {2026},\n  doi = {10.5281/isap.2026.1106}\n}'
+      },
+      'almazan-2026': {
+        title: 'Cognitive Engagement and Critical Thinking in Simulation-Based Law Enforcement Training',
+        apa: 'Almazan, H. J., & Guzman, C. R. (2026). Cognitive Engagement and Critical Thinking in Simulation-Based Law Enforcement Training. ISAP DAWA Multidisciplinary Research Journal, 11(1), 49-64. https://doi.org/10.5281/isap.2026.1107',
+        mla: 'Almazan, H. J., and C. R. Guzman. "Cognitive Engagement and Critical Thinking in Simulation-Based Law Enforcement Training." ISAP DAWA Multidisciplinary Research Journal, vol. 11, no. 1, 2026, pp. 49-64.',
+        chicago: 'Almazan, H. J., and C. R. Guzman. "Cognitive Engagement and Critical Thinking in Simulation-Based Law Enforcement Training." ISAP DAWA Multidisciplinary Research Journal 11, no. 1 (2026): 49-64.',
+        bibtex: '@article{almazan2026simulation,\n  author = {Almazan, H. J. and Guzman, C. R.},\n  title = {Cognitive Engagement and Critical Thinking in Simulation-Based Law Enforcement Training},\n  journal = {ISAP DAWA Multidisciplinary Research Journal},\n  volume = {11},\n  number = {1},\n  pages = {49--64},\n  year = {2026},\n  doi = {10.5281/isap.2026.1107}\n}'
+      }
+    };
+
+    window.toggleAbstract = function (id, btn) {
+      var el = document.getElementById('abstract-' + id);
+      if (!el) return;
+      var isExpanded = el.classList.contains('expanded');
+      el.classList.toggle('expanded', !isExpanded);
+      btn.innerHTML = isExpanded ? '<span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>' : '<span>Collapse Abstract</span> <i class="fas fa-chevron-up"></i>';
+    };
+
+    var modalOverlay = document.getElementById('citationModalOverlay');
+    var modalClose = document.getElementById('citationModalClose');
+    var modalTitle = document.getElementById('citationArticleTitle');
+    var modalPreview = document.getElementById('citationPreviewText');
+    var copyBtn = document.getElementById('copyCitationBtn');
+    var formatBtns = document.querySelectorAll('.citation-format-btn');
+    var currentArticleId = '';
+    var currentFormat = 'apa';
+
+    window.openCitationModal = function (articleId) {
+      currentArticleId = articleId;
+      var data = CITATIONS[articleId];
+      if (!data) return;
+      modalTitle.textContent = data.title;
+      currentFormat = 'apa';
+      formatBtns.forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.format === 'apa');
+      });
+      renderCitation();
+      modalOverlay.classList.add('active');
+    };
+
+    window.closeCitationModal = function () {
+      modalOverlay.classList.remove('active');
+    };
+
+    if (modalClose) modalClose.addEventListener('click', window.closeCitationModal);
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function (e) {
+        if (e.target === modalOverlay) window.closeCitationModal();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) window.closeCitationModal();
+    });
+
+    formatBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        formatBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentFormat = btn.dataset.format;
+        renderCitation();
+      });
+    });
+
+    function renderCitation() {
+      var data = CITATIONS[currentArticleId];
+      if (!data) return;
+      var text = data[currentFormat] || data.apa;
+      modalPreview.textContent = text;
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var text = modalPreview.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            if (window.showToast) window.showToast('Citation copied in ' + currentFormat.toUpperCase() + ' format!', 'success');
+          });
+        }
+      });
+    }
+  })();
+  </script>
 </body>
 </html>

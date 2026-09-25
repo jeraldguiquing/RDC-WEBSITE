@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SDG Advocacies | MCNP &amp; ISAP Research &amp; Community Extension</title>
+  <meta name="description" content="Explore how MCNP and ISAP align scientific inquiry, healthcare caravans, and community extension programs with the 17 United Nations Sustainable Development Goals.">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SDG Advocacies | MCNP &amp; ISAP Research &amp; Community Extension">
+  <meta property="og:description" content="Discover how MCNP and ISAP align scientific research and community extension with the 17 UN Sustainable Development Goals.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SDG Advocacies | MCNP &amp; ISAP Research &amp; Community Extension">
+  <meta name="twitter:description" content="Discover how MCNP and ISAP align research and community extension with the 17 UN SDGs.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +47,8 @@
     .un-section{padding:3rem 0 1rem}
     .un-h{display:flex;align-items:center;gap:1rem;font:600 1.9rem var(--oswald);margin:0 0 1.5rem;color:#2b2b2b}
     .un-h::before{content:"";width:42px;height:1px;background:var(--goal)}
-    .un-overview{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem}
-    .un-overview p{line-height:1.75;margin:0 0 1rem;max-width:68ch}
-    .un-pillars{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
-    .un-pillars li{border-left:3px solid var(--goal);background:#f7f7f7;padding:.8rem 1rem}
-    .un-pillars b{display:block;font:600 1.05rem var(--oswald);color:#222}
-    .un-pillars span{font-size:.88rem;color:#555}
+    .un-overview{max-width:820px}
+    .un-overview p{line-height:1.75;margin:0 0 1.25rem;font-size:1.02rem;color:#334155}
     .un-topic{display:flex;gap:1rem;width:min(100%,300px);border:1px solid #ddd;padding:.8rem;text-decoration:none;color:#222;background:#fff}
     .un-topic:hover{border-color:var(--goal)}
     .un-thumb{flex:0 0 75px;height:100px;background:linear-gradient(160deg,var(--goal),#2b2b2b)}
@@ -61,20 +74,21 @@
     .un-range{font-size:.8rem;color:#555}
     .un-ev-goals{margin-top:auto;padding-top:1.4rem}
     .un-ev-link{margin-top:.9rem;font:600 .72rem var(--oswald);letter-spacing:.03em;text-transform:uppercase;color:var(--goal)}
-    @media(max-width:800px){.un-overview{grid-template-columns:1fr}.un-ev-head{flex-wrap:wrap}}
+    @media(max-width:800px){.un-ev-head{flex-wrap:wrap}}
     .un-goalbar{background:#f4f4f4;border-bottom:1px solid #e3e3e3}
     .un-goalbar .container{display:flex;gap:6px;overflow-x:auto;padding:.75rem 4px}
     .un-goalbar a{flex:0 0 auto;width:34px;height:34px;display:grid;place-items:center;background:var(--c);color:#fff;font:700 .85rem var(--oswald);text-decoration:none;border-radius:3px;opacity:.55}
     .un-goalbar a:hover,.un-goalbar a:focus-visible,.un-goalbar a[aria-current]{opacity:1}
     .un-goalbar a[aria-current]{outline:2px solid #222;outline-offset:2px}
     .un-empty{grid-column:1/-1;color:#666;margin:0}
-    .un-related{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;width:min(100%,420px)}
-    .un-related li{border-left:3px solid var(--goal);background:#f7f7f7}
-    .un-related a{display:block;padding:.75rem 1rem;text-decoration:none;color:#222}
-    .un-related a:hover,.un-related a:focus-visible{background:#f0f0f0}
+    .un-related{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;width:min(100%,480px)}
+    .un-related li{background:#fff;border:1px solid #e2e8f0;border-radius:8px;transition:border-color .15s,box-shadow .15s}
+    .un-related li:hover{border-color:var(--goal);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+    .un-related a{display:block;padding:.85rem 1.1rem;text-decoration:none;color:#222}
+    .un-related a:hover,.un-related a:focus-visible{background:transparent}
     .un-related-date{display:block;font-size:.68rem;letter-spacing:.03em;text-transform:uppercase;color:var(--goal);font-weight:600;margin-bottom:.2rem}
     .un-related-title{display:block;font:600 .98rem/1.4 var(--oswald);color:#222}
-    .un-related-empty{color:#666;margin:0}
+    .un-related-empty{color:#666;margin:0;padding:1rem;border:1px dashed #cbd5e1;border-radius:8px}
   </style>
 </head>
 <body>
@@ -84,7 +98,7 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
         <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
@@ -129,17 +143,22 @@
               </div>
             </li>
 
+            <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -150,10 +169,14 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a href="journal-mcnp.html" class="nav-link">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="journal-mcnp.html" class="dropdown-link">
                   <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
@@ -226,11 +249,6 @@
         <h2 class="un-h">Overview</h2>
         <div class="un-overview">
           <div id="un-ov"></div>
-          <ul class="un-pillars">
-            <li><b>Research</b><span>Studies on health access, livelihoods and public safety in local communities.</span></li>
-            <li><b>Community extension</b><span>Outreach programs that put research findings to work on the ground.</span></li>
-            <li><b>Partnerships</b><span>Work with local government, schools and organizations toward the 2030 Agenda.</span></li>
-          </ul>
         </div>
       </div>
     </section>
@@ -266,8 +284,10 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
+            <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -283,7 +303,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;"><a href="mailto:researchoffice@mcnp.edu.ph" style="color: inherit;">researchoffice@mcnp.edu.ph</a> | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>

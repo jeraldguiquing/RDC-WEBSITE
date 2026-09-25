@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News &amp; Events | MCNP &amp; ISAP Research &amp; Development Center</title>
+  <meta name="description" content="Explore research colloquiums, scholarly defenses, student statistics achievements, health trainings, and SDG initiatives from MCNP &amp; ISAP RDC.">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="News &amp; Events | MCNP &amp; ISAP Research &amp; Development Center">
+  <meta property="og:description" content="Explore research colloquiums, scholarly defenses, student statistics achievements, and SDG initiatives from MCNP &amp; ISAP RDC.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="News &amp; Events | MCNP &amp; ISAP Research &amp; Development Center">
+  <meta name="twitter:description" content="Explore research colloquiums, scholarly defenses, and SDG initiatives from MCNP &amp; ISAP RDC.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ===== Event Detail Modal (click-to-expand) ===== */
@@ -11,14 +28,36 @@
     .news-card .event-view-more {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      margin-top: 0.85rem;
+      gap: 0.4rem;
+      margin-top: 0.95rem;
+      padding: 0.42rem 0.9rem;
+      border-radius: 6px;
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--mcnp-green, #0d5c3a);
+      background: rgba(13, 92, 58, 0.08);
+      border: 1px solid rgba(13, 92, 58, 0.2);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      user-select: none;
     }
-    .news-card .event-view-more::after { content: '→'; transition: transform 0.15s ease; }
-    .news-card:hover .event-view-more::after { transform: translateX(3px); }
+    .news-card .event-view-more::after {
+      content: '→';
+      font-weight: 800;
+      transition: transform 0.2s ease;
+    }
+    .news-card .event-view-more:hover,
+    .news-card:hover .event-view-more {
+      background: var(--mcnp-green, #0d5c3a);
+      color: #ffffff;
+      border-color: var(--mcnp-green, #0d5c3a);
+      box-shadow: 0 4px 12px rgba(13, 92, 58, 0.25);
+      transform: translateY(-1px);
+    }
+    .news-card .event-view-more:hover::after,
+    .news-card:hover .event-view-more::after {
+      transform: translateX(4px);
+    }
 
     .event-modal-overlay {
       position: fixed;
@@ -244,7 +283,7 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
         <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
@@ -292,16 +331,20 @@
 
             <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -313,10 +356,14 @@
 
             <!-- Dropdown: JOURNAL -->
             <li class="nav-item dropdown">
-              <a href="journal-mcnp.html" class="nav-link">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="journal-mcnp.html" class="dropdown-link">
                   <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
@@ -487,8 +534,58 @@
         </article>
 
         <article class="news-card" id="event-sdg-spot-launch">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #1e3a8a, #15803d);"><span class="news-date-badge">Aug 28, 2026</span><div><h4 style="color: #fff; font-size: 1.1rem;">SDG SPOT @ RDC</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-isap" style="margin-bottom: 0.5rem; display: inline-block;">Research for the Goals</span><h3 class="news-title">Pick a Goal. Raise Your Flag. Make Your Impact.</h3><p class="news-excerpt">The SDG SPOT @ RDC: Research for the Goals officially came to life through its soft opening on August 28, 2026, in front of the Research and Development Center. Students, employees, and alumni joined by choosing an SDG to support, raising its flaglet, and capturing their commitment at the SDG Corner.</p><details><summary>Read full story</summary><p class="news-excerpt">More than a physical corner, SDG SPOT @ RDC is a year-round initiative of the Research and Development Center designed to bring the 17 Sustainable Development Goals closer to the academic community. It creates an interactive space where SDG awareness is connected with research, campus participation, practical action, and institutional improvement. Through the project, the RDC hopes to demonstrate that the Global Goals are not distant aspirations—they can be advanced through the studies we conduct, the ideas we share, and the actions we take within our own community.</p><p class="news-excerpt">The initiative primarily advances SDG 4 – Quality Education by strengthening SDG literacy, research awareness, and experiential learning. It also contributes to SDG 9 – Industry, Innovation and Infrastructure by encouraging research, solutions, and innovation; SDG 16 – Peace, Justice and Strong Institutions by providing avenues for stakeholder participation, student and employee voices, and evidence-informed institutional improvement; and SDG 17 – Partnerships for the Goals by bringing together students, employees, alumni, researchers, institutional offices, and potential partners in a shared commitment to sustainable development. While these four SDGs represent the project's strongest direct contributions, SDG SPOT @ RDC promotes awareness and engagement across all 17 Global Goals.</p><p class="news-excerpt">At the heart of the project are three interconnected activities:</p><h4>GOAL MATCH</h4><p class="news-excerpt"><strong>Pick a Study. Find its Goal. Discover its Impact.</strong> Participants connect actual research studies with the SDG they primarily address. By examining the purpose and potential contribution of a study, they discover how research can respond to concerns in health, education, environment, innovation, equality, governance, partnerships, and other areas of sustainable development. The activity also provides the RDC with a way to assess and strengthen understanding of research-to-SDG alignment.</p><h4>SDG RESEARCH SNAP</h4><p class="news-excerpt"><strong>Show Your Goal. Share Your Impact.</strong> Designed especially for student researchers, this activity makes SDG integration visible during proposal and final research defenses. Research groups identify the primary SDG connected to their study, complete the statement "I Research for SDG ___ because ___," and capture their research commitment with the corresponding SDG flaglets. Over time, these connections can provide a clearer picture of which Global Goals are being addressed by institutional research and which areas may need greater research attention.</p><h4>SDG MISSION CARD</h4><p class="news-excerpt"><strong>17 Goals. 17 Campus Actions. One Impact.</strong> This activity brings the SDGs into everyday campus life. Participants complete simple actions inspired by the 17 Goals—from sharing solutions to campus concerns and suggesting sustainability initiatives to expressing appreciation, promoting inclusion, and proposing innovations or partnerships. Their ideas and responses provide the RDC with stakeholder inputs that may reveal opportunities for research, innovation, sustainability initiatives, partnerships, and institutional improvement.</p><p class="news-excerpt"><strong>Together, these activities create one continuing journey:</strong><br>UNDERSTAND the Goals<br>CONNECT them with Research<br>ACT within the Community<br>CREATE IMPACT.</p><p class="news-excerpt">The soft opening is only the beginning. As SDG SPOT @ RDC continues throughout the academic year, the initiative seeks to develop a community where students, employees, alumni, and researchers do not simply know the SDGs—they understand their role in advancing them.</p><p class="news-excerpt">Because the Global Goals become meaningful when they become our goals, our actions, and our shared impact.</p><p class="news-excerpt"><strong>Every Study. A Goal. An Impact.<br>SDG SPOT @ RDC | Research for the Goals<br>Pick a Goal. Raise Your Flag. Make Your Impact.</strong></p><p class="news-excerpt"><em>Advancing SDG 4 • SDG 9 • SDG 16 • SDG 17 | Engaging with all 17 Global Goals</em></p></details></div></div>
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/sdg-spot-1.jpg" alt="SDG SPOT @ RDC: Research for the Goals - Pick a Goal. Raise Your Flag. Make Your Impact." class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">Aug 28, 2026</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">Research for the Goals</span>
+              <h4 class="news-thumb-topic">SDG SPOT @ RDC</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-isap" style="margin-bottom: 0.5rem; display: inline-block;">Research for the Goals</span>
+              <h3 class="news-title">Pick a Goal. Raise Your Flag. Make Your Impact.</h3>
+              <p class="news-excerpt">The SDG SPOT @ RDC: Research for the Goals officially came to life through its soft opening on August 28, 2026, in front of the Research and Development Center. Students, employees, and alumni joined by choosing an SDG to support, raising its flaglet, and capturing their commitment at the SDG Corner.</p>
+              <details>
+                <summary>Read full story</summary>
+                <p class="news-excerpt">More than a physical corner, SDG SPOT @ RDC is a year-round initiative of the Research and Development Center designed to bring the 17 Sustainable Development Goals closer to the academic community. It creates an interactive space where SDG awareness is connected with research, campus participation, practical action, and institutional improvement. Through the project, the RDC hopes to demonstrate that the Global Goals are not distant aspirations—they can be advanced through the studies we conduct, the ideas we share, and the actions we take within our own community.</p>
+                <p class="news-excerpt">The initiative primarily advances SDG 4 – Quality Education by strengthening SDG literacy, research awareness, and experiential learning. It also contributes to SDG 9 – Industry, Innovation and Infrastructure by encouraging research, solutions, and innovation; SDG 16 – Peace, Justice and Strong Institutions by providing avenues for stakeholder participation, student and employee voices, and evidence-informed institutional improvement; and SDG 17 – Partnerships for the Goals by bringing together students, employees, alumni, researchers, institutional offices, and potential partners in a shared commitment to sustainable development. While these four SDGs represent the project's strongest direct contributions, SDG SPOT @ RDC promotes awareness and engagement across all 17 Global Goals.</p>
+                <p class="news-excerpt">At the heart of the project are three interconnected activities:</p>
+                <h4>GOAL MATCH</h4>
+                <p class="news-excerpt"><strong>Pick a Study. Find its Goal. Discover its Impact.</strong> Participants connect actual research studies with the SDG they primarily address. By examining the purpose and potential contribution of a study, they discover how research can respond to concerns in health, education, environment, innovation, equality, governance, partnerships, and other areas of sustainable development. The activity also provides the RDC with a way to assess and strengthen understanding of research-to-SDG alignment.</p>
+                <h4>SDG RESEARCH SNAP</h4>
+                <p class="news-excerpt"><strong>Show Your Goal. Share Your Impact.</strong> Designed especially for student researchers, this activity makes SDG integration visible during proposal and final research defenses. Research groups identify the primary SDG connected to their study, complete the statement "I Research for SDG ___ because ___," and capture their research commitment with the corresponding SDG flaglets. Over time, these connections can provide a clearer picture of which Global Goals are being addressed by institutional research and which areas may need greater research attention.</p>
+                <h4>SDG MISSION CARD</h4>
+                <p class="news-excerpt"><strong>17 Goals. 17 Campus Actions. One Impact.</strong> This activity brings the SDGs into everyday campus life. Participants complete simple actions inspired by the 17 Goals—from sharing solutions to campus concerns and suggesting sustainability initiatives to expressing appreciation, promoting inclusion, and proposing innovations or partnerships. Their ideas and responses provide the RDC with stakeholder inputs that may reveal opportunities for research, innovation, sustainability initiatives, partnerships, and institutional improvement.</p>
+                <p class="news-excerpt"><strong>Together, these activities create one continuing journey:</strong><br>UNDERSTAND the Goals<br>CONNECT them with Research<br>ACT within the Community<br>CREATE IMPACT.</p>
+                <p class="news-excerpt">The soft opening is only the beginning. As SDG SPOT @ RDC continues throughout the academic year, the initiative seeks to develop a community where students, employees, alumni, and researchers do not simply know the SDGs—they understand their role in advancing them.</p>
+                <p class="news-excerpt">Because the Global Goals become meaningful when they become our goals, our actions, and our shared impact.</p>
+                <p class="news-excerpt"><strong>Every Study. A Goal. An Impact.<br>SDG SPOT @ RDC | Research for the Goals<br>Pick a Goal. Raise Your Flag. Make Your Impact.</strong></p>
+                <p class="news-excerpt"><em>Advancing SDG 4 • SDG 9 • SDG 16 • SDG 17 | Engaging with all 17 Global Goals</em></p>
+              </details>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/sdg-spot-1.jpg" alt="Students raising SDG flaglets at SDG SPOT @ RDC">
+                <img src="upload/sdg-spot-2.jpg" alt="SDG SPOT corner table setup with Mission Cards and Research Snap banner">
+                <img src="upload/sdg-spot-3.jpg" alt="Students holding SDG 3, 6, 10, and 1 flaglets">
+                <img src="upload/sdg-spot-4.jpg" alt="Students participating in SDG Research Snap">
+                <img src="upload/sdg-spot-5.jpg" alt="SDG SPOT display and Goal Match materials">
+                <img src="upload/sdg-spot-6.jpg" alt="SDG flaglets and commitment activity station">
+                <img src="upload/sdg-spot-7.jpg" alt="Campus community participating at the SDG Corner">
+                <img src="upload/sdg-spot-8.jpg" alt="Students holding Sustainable Development Goals flags">
+                <img src="upload/sdg-spot-9.jpg" alt="Student researchers raising commitment flags">
+                <img src="upload/sdg-spot-10.jpg" alt="Participants engaging with SDG Mission Cards">
+                <img src="upload/sdg-spot-11.jpg" alt="SDG SPOT @ RDC interactive engagement station">
+                <img src="upload/sdg-spot-12.jpg" alt="MCNP-ISAP students holding SDG 12, 11, and 5 flags">
+                <img src="upload/sdg-spot-13.jpg" alt="Students participating in the soft opening of SDG SPOT">
+                <img src="upload/sdg-spot-14.jpg" alt="Attendees holding Goal flaglets in front of RDC">
+                <img src="upload/sdg-spot-15.jpg" alt="Students celebrating sustainable development goals">
+                <img src="upload/sdg-spot-16.jpg" alt="SDG Corner participants taking commitment photos">
+                <img src="upload/sdg-spot-17.jpg" alt="SDG SPOT @ RDC closing documentation">
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="news-card" id="event-equipping-students">
@@ -497,13 +594,74 @@
         </article>
 
         <article class="news-card" id="event-general-assembly">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #3b2358, #1f3b73);"><span class="news-date-badge">Aug 24, 2026</span><div><h4 style="color: #fff; font-size: 1.1rem;">RDC General Assembly</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-admin" style="margin-bottom: 0.5rem; display: inline-block;">MCNP–ISAP RDC</span><h3 class="news-title">Strengthening Research Through Shared Direction</h3><p class="news-excerpt">The MCNP–ISAP Research and Development Center convened its General Assembly 2026 on August 24, bringing together RDC personnel and research focal persons to revisit research processes and discuss the Institutional Research Agenda, RDC Strategic Plan 2026–2030, and Operational Plan for Academic Year 2026–2027.</p><details><summary>Read full story</summary><p class="news-excerpt">The activity supports SDG 4: Quality Education by strengthening research knowledge and capabilities; SDG 9: Industry, Innovation and Infrastructure by promoting research-driven innovation; SDG 16: Peace, Justice and Strong Institutions by establishing transparent, ethical, and standardized research procedures; and SDG 17: Partnerships for the Goals by strengthening collaboration among research personnel, academic units, and institutional leaders.</p><p class="news-excerpt">Through shared planning and collective action, the RDC continues to advance relevant, ethical, and impactful research across MCNP and ISAP.</p><p class="news-excerpt"><strong>Innovation Beyond Boundaries.</strong></p></details></div></div>
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/assembly-1.jpg" alt="Strengthening Research Through Shared Direction - MCNP-ISAP RDC General Assembly 2026" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">Aug 24, 2026</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">MCNP–ISAP RDC</span>
+              <h4 class="news-thumb-topic">RDC General Assembly</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-admin" style="margin-bottom: 0.5rem; display: inline-block;">MCNP–ISAP RDC</span>
+              <h3 class="news-title">Strengthening Research Through Shared Direction</h3>
+              <p class="news-excerpt">The MCNP–ISAP Research and Development Center convened its General Assembly 2026 on August 24, bringing together RDC personnel and research focal persons to revisit research processes and discuss the Institutional Research Agenda, RDC Strategic Plan 2026–2030, and Operational Plan for Academic Year 2026–2027.</p>
+              <details>
+                <summary>Read full story</summary>
+                <p class="news-excerpt">The activity supports SDG 4: Quality Education by strengthening research knowledge and capabilities; SDG 9: Industry, Innovation and Infrastructure by promoting research-driven innovation; SDG 16: Peace, Justice and Strong Institutions by establishing transparent, ethical, and standardized research procedures; and SDG 17: Partnerships for the Goals by strengthening collaboration among research personnel, academic units, and institutional leaders.</p>
+                <p class="news-excerpt">Through shared planning and collective action, the RDC continues to advance relevant, ethical, and impactful research across MCNP and ISAP.</p>
+                <p class="news-excerpt"><strong>Innovation Beyond Boundaries.</strong></p>
+              </details>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/assembly-1.jpg" alt="RDC General Assembly 2026 convening personnel and focal persons">
+                <img src="upload/assembly-2.jpg" alt="Standard Operating Procedures presentation session">
+                <img src="upload/assembly-3.jpg" alt="RDC research focal persons discussion and open forum">
+                <img src="upload/assembly-4.jpg" alt="Presentation of Institutional Research Agenda">
+                <img src="upload/assembly-5.jpg" alt="RDC Strategic Plan 2026-2030 discussion">
+                <img src="upload/assembly-6.jpg" alt="RDC personnel and research leads session">
+                <img src="upload/assembly-7.jpg" alt="Operational Plan AY 2026-2027 workshop">
+                <img src="upload/assembly-8.jpg" alt="Research standard operating procedures presentation">
+                <img src="upload/assembly-9.jpg" alt="General Assembly participants in collaborative review">
+                <img src="upload/assembly-10.jpg" alt="RDC leadership address during General Assembly">
+                <img src="upload/assembly-11.jpg" alt="Attendees reviewing research documents and guidelines">
+                <img src="upload/assembly-12.jpg" alt="RDC General Assembly participants collective photo">
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="news-card" id="event-health-research-collaboration">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #0b3c5d, #1f6f8b);"><span class="news-date-badge">Aug 19–20, 2026</span><div><h4 style="color: #fff; font-size: 1.1rem;">Health Research Collaboration</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">RRF Technical Review</span><h3 class="news-title">Advancing Health Research Through Collaboration</h3><p class="news-excerpt">MCNP and ISAP proudly co-hosted the Regional Research Fund (RRF) Technical Review Board Evaluation on August 19–20, 2026, in partnership with DOST–<a href="https://web.facebook.com/rcvhrdc?__cft__[0]=AZjGj3v75us_d9ktVK56GBoPl865Z1fRKENAheHZ4-4dnV1XuUEoQWpH3t7MA_yjxNFvuEpa7bmfsPdeovVuU3NqGZ9Z6TrsHofa1tTCNjHOTiE-sG9tkqdtNWzc8ffUv6tTMnWsx8Fag2JIdLoYysdtyfAUasqhovFEYOsMbPWMhe78msFCRw6V-x98jG0&amp;__tn__=-K-R" target="_blank" rel="noopener noreferrer">Cagayan Valley Health Research and Development Consortium (CVHRDC)</a>.</p><details><summary>Read full story</summary><p class="news-excerpt">The activity supports SDG 4: Quality Education by strengthening the research capabilities of researchers through expert evaluation, technical guidance, and constructive feedback. It also advances SDG 17: Partnerships for the Goals by strengthening collaboration among academic institutions, government agencies, research experts, and health-sector partners in advancing relevant and high-quality health research.</p><p class="news-excerpt">Through this partnership, MCNP and ISAP reaffirm their commitment to research excellence, evidence-based innovation, and improved health outcomes for communities.</p><p class="news-excerpt"><strong>Innovation Beyond Boundaries.</strong></p></details></div></div>
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/health-research-1.jpg" alt="Advancing Health Research Through Collaboration - DOST CVHRDC RRF Technical Review" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">Aug 19–20, 2026</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">RRF Technical Review</span>
+              <h4 class="news-thumb-topic">Health Research Collaboration</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">RRF Technical Review</span>
+              <h3 class="news-title">Advancing Health Research Through Collaboration</h3>
+              <p class="news-excerpt">MCNP and ISAP proudly co-hosted the Regional Research Fund (RRF) Technical Review Board Evaluation on August 19–20, 2026, in partnership with DOST–<a href="https://web.facebook.com/rcvhrdc?__cft__[0]=AZjGj3v75us_d9ktVK56GBoPl865Z1fRKENAheHZ4-4dnV1XuUEoQWpH3t7MA_yjxNFvuEpa7bmfsPdeovVuU3NqGZ9Z6TrsHofa1tTCNjHOTiE-sG9tkqdtNWzc8ffUv6tTMnWsx8Fag2JIdLoYysdtyfAUasqhovFEYOsMbPWMhe78msFCRw6V-x98jG0&amp;__tn__=-K-R" target="_blank" rel="noopener noreferrer">Cagayan Valley Health Research and Development Consortium (CVHRDC)</a>.</p>
+              <details><summary>Read full story</summary><p class="news-excerpt">The activity supports SDG 4: Quality Education by strengthening the research capabilities of researchers through expert evaluation, technical guidance, and constructive feedback. It also advances SDG 17: Partnerships for the Goals by strengthening collaboration among academic institutions, government agencies, research experts, and health-sector partners in advancing relevant and high-quality health research.</p><p class="news-excerpt">Through this partnership, MCNP and ISAP reaffirm their commitment to research excellence, evidence-based innovation, and improved health outcomes for communities.</p><p class="news-excerpt"><strong>Innovation Beyond Boundaries.</strong></p></details>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/health-research-1.jpg" alt="RRF Technical Review Board Evaluation boardroom meeting with panel and delegates">
+                <img src="upload/health-research-2.jpg" alt="Health research project proposal presentation on smart screen">
+                <img src="upload/health-research-3.jpg" alt="DOST CVHRDC evaluation board review discussion">
+                <img src="upload/health-research-4.jpg" alt="Faculty researchers defending proposal before the technical panel">
+                <img src="upload/health-research-5.jpg" alt="Technical review panel asking questions to presenter">
+                <img src="upload/health-research-6.jpg" alt="Faculty research presentation session">
+                <img src="upload/health-research-7.jpg" alt="RRF Technical Review attendees and research proponents">
+                <img src="upload/health-research-8.jpg" alt="Research evaluation panel reviewing documentation">
+                <img src="upload/health-research-9.jpg" alt="Proponent answering technical review board inquiries">
+                <img src="upload/health-research-10.jpg" alt="MCNP-ISAP research leaders and DOST-CVHRDC collaboration">
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="news-card" id="event-icir-2026">
@@ -512,11 +670,11 @@
         </article>
 
         <article class="news-card" id="event-cbcp-ust-collab">
-          <div class="news-thumbnail news-thumb-photo">
-            <img src="upload/1.jpg" alt="CBCP-UST Collaborative Project" class="news-thumb-bg" loading="lazy">
-            <div class="news-thumb-overlay"></div>
-            <span class="news-date-badge">Nov 17, 2024</span>
-            <div class="news-thumb-text">
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/1.jpg" alt="CBCP-UST Collaborative Project" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">Nov 17, 2024</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
               <span class="news-thumb-pill">Catholic Christianity Study</span>
               <h4 class="news-thumb-topic">Collaborative Research</h4>
             </div>
@@ -526,39 +684,78 @@
               <span class="dropdown-badge badge-admin" style="margin-bottom: 0.5rem; display: inline-block;">MCNP-ISAP RDC</span>
               <h3 class="news-title">RDC Joins CBCP-UST Collaborative Project on Catholic Christianity</h3>
               <p class="news-excerpt">The MCNP-ISAP Research and Development Center, led by Research Director Ryan C. Fontanilla, participated in the CBCP and University of Santo Tomas project at the Archbishop's Residence in Tuguegarao City.</p>
-
-              <!-- Interactive Event Photo Gallery (11 Photos) -->
-              <div class="event-gallery-slider" data-gallery-slider aria-label="CBCP-UST Event Photos">
-                <span class="event-gallery-counter">1 / 11 Photos</span>
-                <button class="event-gallery-control prev" type="button" data-gallery-prev aria-label="Previous event photo">&#10094;</button>
-                <div class="event-gallery-slide active"><img src="upload/1.jpg" alt="CBCP-UST event photo 1" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/2.jpg" alt="CBCP-UST event photo 2" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/3.jpg" alt="CBCP-UST event photo 3" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/4.jpg" alt="CBCP-UST event photo 4" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/5.jpg" alt="CBCP-UST event photo 5" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/6.jpg" alt="CBCP-UST event photo 6" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/7.jpg" alt="CBCP-UST event photo 7" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/8.jpg" alt="CBCP-UST event photo 8" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/9.jpg" alt="CBCP-UST event photo 9" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/10.jpg" alt="CBCP-UST event photo 10" loading="lazy"></div>
-                <div class="event-gallery-slide"><img src="upload/11.jpg" alt="CBCP-UST event photo 11" loading="lazy"></div>
-                <button class="event-gallery-control next" type="button" data-gallery-next aria-label="Next event photo">&#10095;</button>
-                <button class="event-gallery-fullscreen" type="button" data-gallery-fullscreen aria-label="Open gallery fullscreen" title="Open gallery fullscreen">&#x26F6;</button>
-              </div>
-
               <details><summary>Read full story</summary><p class="news-excerpt">The initiative assesses the current status of Catholic Christianity in the Philippines toward fostering a Synodal Church. Lay organizations across the Archdiocese of Tuguegarao answered the project survey, while respondents' privacy was protected by blurring faces in event photographs.</p></details>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/1.jpg" alt="CBCP-UST event photo 1">
+                <img src="upload/2.jpg" alt="CBCP-UST event photo 2">
+                <img src="upload/3.jpg" alt="CBCP-UST event photo 3">
+                <img src="upload/4.jpg" alt="CBCP-UST event photo 4">
+                <img src="upload/5.jpg" alt="CBCP-UST event photo 5">
+                <img src="upload/6.jpg" alt="CBCP-UST event photo 6">
+                <img src="upload/7.jpg" alt="CBCP-UST event photo 7">
+                <img src="upload/8.jpg" alt="CBCP-UST event photo 8">
+                <img src="upload/9.jpg" alt="CBCP-UST event photo 9">
+                <img src="upload/10.jpg" alt="CBCP-UST event photo 10">
+                <img src="upload/11.jpg" alt="CBCP-UST event photo 11">
+              </div>
             </div>
           </div>
         </article>
 
-        <article class="news-card">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #0b3c5d, #1e40af);"><span class="news-date-badge">2024</span><div><h4 style="color: #fff; font-size: 1.1rem;">Student Achievement</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-isap" style="margin-bottom: 0.5rem; display: inline-block;">Statistics Quiz Bee</span><h3 class="news-title">MCNP and ISAP Students Excel in the 28th Philippine Statistics Quiz Bee</h3><p class="news-excerpt">Nathaniel M. Acacio of ISAP won first place in the Quiz Bee. Ma. Julianne Tabbu of MCNP placed third and Althea Balanag of ISAP placed fifth in the Digital Poster Making Contest.</p><details><summary>View participants</summary><p class="news-excerpt">Other participants included Maxine Alipio, Sharmelyn Torres, Jenieva Catawe, Jasper Catulin, and Jaylord Victorio, with support from coaches Wendy Mae G. Lapuz and Christine Kae Aragon.</p></details></div></div>
+        <article class="news-card" id="event-student-stats-28th">
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/stats-awards-2.jpg" alt="28th Philippine Statistics Quiz Bee" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">2024</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">Statistics Quiz Bee</span>
+              <h4 class="news-thumb-topic">Student Achievement</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-isap" style="margin-bottom: 0.5rem; display: inline-block;">Statistics Quiz Bee</span>
+              <h3 class="news-title">MCNP and ISAP Students Excel in the 28th Philippine Statistics Quiz Bee</h3>
+              <p class="news-excerpt">Nathaniel M. Acacio of ISAP won first place in the Quiz Bee. Ma. Julianne Tabbu of MCNP placed third and Althea Balanag of ISAP placed fifth in the Digital Poster Making Contest.</p>
+              <details><summary>View participants</summary><p class="news-excerpt">Other participants included Maxine Alipio, Sharmelyn Torres, Jenieva Catawe, Jasper Catulin, and Jaylord Victorio, with support from coaches Wendy Mae G. Lapuz and Christine Kae Aragon.</p></details>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/stats-awards-2.jpg" alt="28th Philippine Statistics Quiz Bee delegation on stage">
+                <img src="upload/stats-awards-3.jpg" alt="28th Philippine Statistics Quiz Bee 1st Place - Nathaniel M. Acacio">
+                <img src="upload/stats-awards-1.jpg" alt="Digital Poster Making Contest award ceremony on stage with student winners and coaches">
+                <img src="upload/stats-awards-4.jpg" alt="Digital Poster Making Contest 3rd Place - Ma. Julianne Tabbu">
+                <img src="upload/stats-awards-5.jpg" alt="Digital Poster Making Contest 5th Place - Althea Balanag">
+                <img src="upload/stats-awards-6.jpg" alt="Statistics Quiz Bee participants with coach">
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="news-card">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #0d5c3a, #15803d);"><span class="news-date-badge">35th NSM</span><div><h4 style="color: #fff; font-size: 1.1rem;">Institutional Competition</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">Quiz Bee Winners</span><h3 class="news-title">Congratulations to the Winners of the Institutional Statistics Quiz Bee</h3><p class="news-excerpt">ISAP champion Jaylord S. Victorio was joined by Nathaniel Acacio and Jasper S. Catulin. MCNP champion Sharmelyn T. Torres was joined by Maxine Alipio and Jenieva M. Catawe.</p></div></div>
+        <article class="news-card" id="event-inst-quiz-bee">
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/inst-quizbee-1.jpg" alt="Institutional Statistics Quiz Bee Winners" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">35th NSM</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">Quiz Bee Winners</span>
+              <h4 class="news-thumb-topic">Institutional Competition</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">Quiz Bee Winners</span>
+              <h3 class="news-title">Congratulations to the Winners of the Institutional Statistics Quiz Bee</h3>
+              <p class="news-excerpt">ISAP champion Jaylord S. Victorio was joined by Nathaniel Acacio and Jasper S. Catulin. MCNP champion Sharmelyn T. Torres was joined by Maxine Alipio and Jenieva M. Catawe.</p>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/inst-quizbee-1.jpg" alt="Institutional Statistics Quiz Bee participants and awardees">
+                <img src="upload/inst-quizbee-2.jpg" alt="ISAP Champion - Information Technology Department (Jaylord S. Victorio)">
+                <img src="upload/inst-quizbee-3.jpg" alt="MCNP Champion - Nursing Department (Sharmelyn T. Torres)">
+                <img src="upload/inst-quizbee-4.jpg" alt="MCNP 2nd Place - Medical Laboratory Sciences Department">
+                <img src="upload/inst-quizbee-5.jpg" alt="MCNP 2nd Place - Pharmacy Department">
+                <img src="upload/inst-quizbee-6.jpg" alt="ISAP 2nd Place - Criminology Department">
+                <img src="upload/inst-quizbee-7.jpg" alt="ISAP 2nd Place - Secondary Education Department">
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="news-card">
@@ -576,9 +773,31 @@
           <div class="news-content"><div><span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">Color Fun Run</span><h3 class="news-title">School Statisticians Join the 35th National Statistics Month Color Fun Run</h3><p class="news-excerpt">Ms. Cristine Kae Aragon and Ms. Guadalupe Agabin represented their institution in the Philippine Statistics Authority event in Tuguegarao City, promoting awareness and appreciation of statistics.</p></div></div>
         </article>
 
-        <article class="news-card">
-          <div class="news-thumbnail" style="background: linear-gradient(135deg, #7c2d12, #b45309);"><span class="news-date-badge">October 2024</span><div><h4 style="color: #fff; font-size: 1.1rem;">Digital Poster Making</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-admin" style="margin-bottom: 0.5rem; display: inline-block;">Student Awards</span><h3 class="news-title">MCNP and ISAP Students Receive Statistics Month Awards</h3><p class="news-excerpt">Bryan Marantan placed third, John Lloyd Angui placed second, and Peter John F. Bosi placed second in the Digital Poster Making Contest held at People's Gymnasium, Tuguegarao City.</p></div></div>
+        <article class="news-card" id="event-student-stats-awards">
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/stats-awards-1.jpg" alt="MCNP and ISAP Students Receive Statistics Month Awards" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">October 2024</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">Student Awards</span>
+              <h4 class="news-thumb-topic">Digital Poster Making</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-admin" style="margin-bottom: 0.5rem; display: inline-block;">Student Awards</span>
+              <h3 class="news-title">MCNP and ISAP Students Receive Statistics Month Awards</h3>
+              <p class="news-excerpt">Bryan Marantan placed third, John Lloyd Angui placed second, and Peter John F. Bosi placed second in the Digital Poster Making Contest held at People's Gymnasium, Tuguegarao City.</p>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/stats-awards-1.jpg" alt="Digital Poster Making Contest awarding ceremony on stage with student winners and coaches">
+                <img src="upload/stats-awards-4.jpg" alt="Digital Poster Making Contest 3rd Place - Ma. Julianne Tabbu">
+                <img src="upload/stats-awards-5.jpg" alt="Digital Poster Making Contest 5th Place - Althea Balanag">
+                <img src="upload/stats-awards-2.jpg" alt="28th Philippine Statistics Quiz Bee delegation on stage">
+                <img src="upload/stats-awards-3.jpg" alt="28th Philippine Statistics Quiz Bee 1st Place - Nathaniel M. Acacio">
+                <img src="upload/stats-awards-6.jpg" alt="Statistics Quiz Bee participants with coach">
+              </div>
+            </div>
+          </div>
         </article>
 
         <article class="news-card">
@@ -586,9 +805,31 @@
           <div class="news-content"><div><span class="dropdown-badge badge-isap" style="margin-bottom: 0.5rem; display: inline-block;">RDaFest 2024</span><h3 class="news-title">Wendy Mae G. Lapus Represents ISAP at Regional Data Festival</h3><p class="news-excerpt">Ms. Lapus presented "A Relationship Study between Job Demands, Resources, and Personnel Motivation in HEIs" at the North Luzon Regional Data Festival in Subic Bay.</p></div></div>
         </article>
 
-        <article class="news-card">
-          <div class="news-thumbnail"><span class="news-date-badge">September 2024</span><div><h4 style="color: #fff; font-size: 1.1rem;">Research and Development Center</h4></div></div>
-          <div class="news-content"><div><span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">Infographics Contest</span><h3 class="news-title">MCNP and ISAP Conduct Digital Infographics Making Contest</h3><p class="news-excerpt">During the 35th Statistics Month Celebration, John Lloyd Angui was named champion, Mark Lester Sandoval placed second, and Ma. Julianne Tabbu placed third at Computer Laboratory B in Peñablanca, Cagayan.</p><p class="news-excerpt">The awardees were recognized by Research Director Ryan C. Fontanilla.</p></div></div>
+        <article class="news-card" id="event-infographics-contest">
+          <div class="news-thumbnail news-thumb-photo" style="position: relative; height: 210px; overflow: hidden; background: #0f172a;">
+            <img src="upload/infographics-4.jpg" alt="MCNP and ISAP Digital Infographics Making Contest" class="news-thumb-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;" loading="eager">
+            <div class="news-thumb-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none;"></div>
+            <span class="news-date-badge" style="position: relative; z-index: 2;">September 2024</span>
+            <div class="news-thumb-text" style="position: relative; z-index: 2;">
+              <span class="news-thumb-pill">Infographics Contest</span>
+              <h4 class="news-thumb-topic">Digital Infographics Making Contest</h4>
+            </div>
+          </div>
+          <div class="news-content">
+            <div>
+              <span class="dropdown-badge badge-mcnp" style="margin-bottom: 0.5rem; display: inline-block;">Infographics Contest</span>
+              <h3 class="news-title">MCNP and ISAP Conduct Digital Infographics Making Contest</h3>
+              <p class="news-excerpt">During the 35th Statistics Month Celebration, John Lloyd Angui was named champion, Mark Lester Sandoval placed second, and Ma. Julianne Tabbu placed third at Computer Laboratory B in Peñablanca, Cagayan.</p>
+              <p class="news-excerpt">The awardees were recognized by Research Director Ryan C. Fontanilla.</p>
+              <div style="display: none;" aria-hidden="true">
+                <img src="upload/infographics-4.jpg" alt="Digital Infographics Making Contest award ceremony with Research Director Ryan C. Fontanilla, coaches, and winners">
+                <img src="upload/infographics-5.jpg" alt="Digital Infographics Making Contest student winners on stage">
+                <img src="upload/infographics-1.jpg" alt="Winning Infographic entry - Peter John F. Bosi">
+                <img src="upload/infographics-2.jpg" alt="Winning Infographic entry - MC Brian Marantan">
+                <img src="upload/infographics-3.jpg" alt="Winning Infographic entry - Jaylord D. Angui">
+              </div>
+            </div>
+          </div>
         </article>
       </div>
       </section>
@@ -608,8 +849,10 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
+            <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -625,7 +868,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;"><a href="mailto:researchoffice@mcnp.edu.ph" style="color: inherit;">researchoffice@mcnp.edu.ph</a> | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>
@@ -790,7 +1033,21 @@
         if (!content.querySelector('.event-view-more')) {
           var span = document.createElement('span');
           span.className = 'event-view-more';
+          span.setAttribute('role', 'button');
+          span.setAttribute('tabindex', '0');
+          span.setAttribute('aria-label', 'View Full Event Details for ' + (ev.title || 'event'));
           span.textContent = 'View Full Event Details';
+          span.addEventListener('click', function (e) {
+            e.stopPropagation();
+            openModal(index);
+          });
+          span.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              e.stopPropagation();
+              openModal(index);
+            }
+          });
           content.appendChild(span);
         }
       }
@@ -901,7 +1158,7 @@
 
       // Reset to Background tab
       overlay.querySelectorAll('.tab-btn').forEach(function (b, i) { b.classList.toggle('active', i === 0); });
-      overlay.querySelectorAll('.tab-panel').forEach(function (p, i) { p.classList.toggle('active', p.dataset.panel === tab || i === 0); });
+      overlay.querySelectorAll('.tab-panel').forEach(function (p, i) { p.classList.toggle('active', i === 0); });
 
       renderRelated(index);
       updateModalNav(index);

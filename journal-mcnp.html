@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCNP Journal of Medical &amp; Allied Health Sciences | RDC</title>
+  <meta name="description" content="Explore MCNP official peer-reviewed healthcare journals: DAGILAP (RadTech), TIGNAY (Nursing/Midwifery), CHARTULAE (Pharmacy), BORN RMT (MedTech), and PRIMUM MOVENS (PT).">
+  <link rel="icon" type="image/png" href="assets/rdc-logo.png">
+  <link rel="apple-touch-icon" href="assets/rdc-logo.png">
+
+  <!-- Open Graph / Facebook / Messenger -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MCNP Journal of Medical &amp; Allied Health Sciences | RDC">
+  <meta property="og:description" content="Official peer-reviewed medical and health sciences publications of MCNP across nursing, pharmacy, radiologic technology, and physical therapy.">
+  <meta property="og:image" content="assets/rdc-logo.png">
+  <meta property="og:site_name" content="MCNP &amp; ISAP RDC">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MCNP Journal of Medical &amp; Allied Health Sciences | RDC">
+  <meta name="twitter:description" content="Official peer-reviewed medical and health sciences publications of MCNP.">
+  <meta name="twitter:image" content="assets/rdc-logo.png">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +30,7 @@
     <div class="container">
       <div class="topbar-info">
         <span>📍 Alimannao Hills, Peñablanca, Cagayan, Philippines</span>
-        <span>✉️ researchoffice.mcnp.edu.ph</span>
+        <span>✉️ <a href="mailto:researchoffice@mcnp.edu.ph" style="color:inherit">researchoffice@mcnp.edu.ph</a></span>
         <span>📞 +639989847781</span>
       </div>
       <div class="topbar-right">
@@ -62,16 +79,20 @@
 
             <!-- Dropdown: ABOUT RDC -->
             <li class="nav-item dropdown">
-              <a href="about-rdc-mcnp.html" class="nav-link">
+              <a href="about-rdc.html" class="nav-link">
                 ABOUT RDC <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="about-rdc.html" class="dropdown-link">
+                  <span>About RDC (Unified Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="about-rdc-mcnp.html" class="dropdown-link">
-                  <span>MCNP Research &amp; Development</span>
+                  <span>MCNP Health Research Wing</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
                 </a>
                 <a href="about-rdc-isap.html" class="dropdown-link">
-                  <span>ISAP Research &amp; Development</span>
+                  <span>ISAP Multidisciplinary Wing</span>
                   <span class="dropdown-badge badge-isap">ISAP</span>
                 </a>
               </div>
@@ -83,10 +104,14 @@
 
             <!-- Dropdown: JOURNAL -->
             <li class="nav-item dropdown">
-              <a href="journal-mcnp.html" class="nav-link active">
-                JOURNAL <span class="arrow">&#9662;</span>
+              <a href="journal.html" class="nav-link active">
+                JOURNALS <span class="arrow">&#9662;</span>
               </a>
               <div class="dropdown-menu">
+                <a href="journal.html" class="dropdown-link">
+                  <span>All Journals Portal (Overview)</span>
+                  <span class="dropdown-badge badge-admin">ALL</span>
+                </a>
                 <a href="journal-mcnp.html" class="dropdown-link active">
                   <span>MCNP Health &amp; Allied Sciences</span>
                   <span class="dropdown-badge badge-mcnp">MCNP</span>
@@ -139,6 +164,15 @@
   <!-- Main Content -->
   <main class="section">
     <div class="container">
+
+      <!-- Journal Cross-Navigation Tabs -->
+      <div class="journal-nav-tabs">
+        <a href="journal.html" class="journal-nav-tab">📚 All Journals Portal</a>
+        <a href="journal-mcnp.html" class="journal-nav-tab active">🔬 MCNP Health Journal</a>
+        <a href="journal-isap.html" class="journal-nav-tab">⚖️ ISAP DAWA Journal</a>
+        <a href="journal-admin.html" class="journal-nav-tab">📖 Journal in Admin (FlipBook)</a>
+      </div>
+
       <div style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 3rem; align-items: start;">
         <div>
           <!-- Official MCNP Journal Portal Link Banner -->
@@ -160,13 +194,17 @@
               <h2 style="font-size: 1.45rem; color: #1e293b; margin-top: 0.5rem;">Advances in Northern Luzon Community Health &amp; Clinical Care</h2>
               <p style="font-size: 0.88rem; color: var(--muted-text);">Published by MCNP Research &amp; Development Center • Open Access</p>
             </div>
-            <button class="btn btn-mcnp" onclick="showToast('Initiating Full Issue PDF Download (Vol. 8, Issue 2)...', 'success')">
-              Download Full Issue (PDF)
-            </button>
+            <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="btn btn-mcnp">
+              Access Issue in Journal System ↗
+            </a>
           </div>
 
           <!-- Published Papers in this Issue -->
-          <h3 style="font-size: 1.35rem; color: #1e293b; margin-bottom: 1.25rem;">Articles in this Issue</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.35rem; color: #1e293b; margin: 0;">Articles in this Issue</h3>
+            <span style="font-size: 0.82rem; color: #64748b; font-weight: 600;">4 Peer-Reviewed Papers</span>
+          </div>
+
           <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;">
 
             <!-- Paper 1 -->
@@ -175,13 +213,21 @@
                 <span class="article-journal-badge badge-mcnp">Research Article • Medical Laboratory Science</span>
                 <h4 class="article-title">Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan Against Clinically Isolated Pathogens</h4>
                 <p class="article-authors">A. R. Pascual, RMT, MSMLS; D. C. Agbisit, MD; E. K. Guzman, PharmD</p>
-                <p class="article-abstract">
-                  This study investigated the phytochemical constituents and in vitro antibacterial efficacy of crude ethanolic and aqueous leaf extracts of three indigenous plant species collected from the karst landscapes of Peñablanca against multi-drug resistant clinical isolates of <em>Staphylococcus aureus</em> and <em>Escherichia coli</em>.
-                </p>
+                <div class="article-abstract-content" id="abstract-pascual-2026">
+                  <p class="article-abstract">
+                    This study investigated the phytochemical constituents and in vitro antibacterial efficacy of crude ethanolic and aqueous leaf extracts of three indigenous plant species collected from the karst landscapes of Peñablanca against multi-drug resistant clinical isolates of <em>Staphylococcus aureus</em> and <em>Escherichia coli</em>. Disc diffusion tests demonstrated significant zones of inhibition (p &lt; 0.01) comparable to standard ciprofloxacin controls.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('pascual-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/mcnp.2026.0821 • Pages 1–14</span>
-                <button class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);" onclick="showToast('Downloading Article PDF: Pascual et al. (2026)', 'success')">Download PDF</button>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('pascual-2026')">Cite</button>
+                  <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);">View in OJS ↗</a>
+                </div>
               </div>
             </div>
 
@@ -191,13 +237,21 @@
                 <span class="article-journal-badge badge-mcnp">Research Article • Radiologic Technology</span>
                 <h4 class="article-title">Diagnostic Accuracy and Radiation Dose Reduction in Pediatric Chest Digital Radiography Protocols</h4>
                 <p class="article-authors">C. M. Baloran, RRT, MSRT; F. T. Macarubbo, MD</p>
-                <p class="article-abstract">
-                  Evaluated the image contrast-to-noise ratio (CNR) and dose-area product (DAP) across 150 pediatric chest radiographic examinations using optimized exposure parameters in secondary and tertiary diagnostic centers in Cagayan Valley.
-                </p>
+                <div class="article-abstract-content" id="abstract-baloran-2026">
+                  <p class="article-abstract">
+                    Evaluated the image contrast-to-noise ratio (CNR) and dose-area product (DAP) across 150 pediatric chest radiographic examinations using optimized exposure parameters in secondary and tertiary diagnostic centers in Cagayan Valley. Results demonstrated a 28% reduction in entrance surface dose without loss of diagnostic image quality.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('baloran-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/mcnp.2026.0822 • Pages 15–28</span>
-                <button class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);" onclick="showToast('Downloading Article PDF: Baloran & Macarubbo (2026)', 'success')">Download PDF</button>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('baloran-2026')">Cite</button>
+                  <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);">View in OJS ↗</a>
+                </div>
               </div>
             </div>
 
@@ -207,13 +261,21 @@
                 <span class="article-journal-badge badge-mcnp">Research Article • Nursing Practice</span>
                 <h4 class="article-title">Nurse Resilience, Compassion Fatigue, and Patient Care Outcomes in Critical Care Units in Northern Luzon</h4>
                 <p class="article-authors">L. G. Fernandez, RN, PhD; R. T. Pimentel, RN, MAN</p>
-                <p class="article-abstract">
-                  A cross-sectional investigation examining structural empowerment, occupational stress markers, and resilience coping mechanisms among 210 registered bedside nurses in public and private medical institutions in Region II.
-                </p>
+                <div class="article-abstract-content" id="abstract-fernandez-2026">
+                  <p class="article-abstract">
+                    A cross-sectional investigation examining structural empowerment, occupational stress markers, and resilience coping mechanisms among 210 registered bedside nurses in public and private medical institutions in Region II, offering institutional mental health intervention strategies.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('fernandez-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/mcnp.2026.0823 • Pages 29–42</span>
-                <button class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);" onclick="showToast('Downloading Article PDF: Fernandez & Pimentel (2026)', 'success')">Download PDF</button>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('fernandez-2026')">Cite</button>
+                  <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);">View in OJS ↗</a>
+                </div>
               </div>
             </div>
 
@@ -223,13 +285,21 @@
                 <span class="article-journal-badge badge-mcnp">Research Article • Pharmacy &amp; Pharmacology</span>
                 <h4 class="article-title">Knowledge, Attitudes, and Self-Medication Practices with Antibiotics Among Rural Households in Peñablanca</h4>
                 <p class="article-authors">G. B. Aquino, RPh, MS; K. D. Taguinod, MD</p>
-                <p class="article-abstract">
-                  Community-based epidemiological survey evaluating non-prescription antibiotic acquisition habits, risk awareness, and compliance with prescribed dosage regimens among heads of households in seven rural barangays.
-                </p>
+                <div class="article-abstract-content" id="abstract-aquino-2026">
+                  <p class="article-abstract">
+                    Community-based epidemiological survey evaluating non-prescription antibiotic acquisition habits, risk awareness, and compliance with prescribed dosage regimens among heads of households in seven rural barangays in Peñablanca, Cagayan.
+                  </p>
+                </div>
+                <button type="button" class="article-abstract-btn" onclick="toggleAbstract('aquino-2026', this)">
+                  <span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>
+                </button>
               </div>
-              <div class="article-meta">
+              <div class="article-meta" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
                 <span>DOI: 10.5281/mcnp.2026.0824 • Pages 43–56</span>
-                <button class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);" onclick="showToast('Downloading Article PDF: Aquino & Taguinod (2026)', 'success')">Download PDF</button>
+                <div style="display: flex; gap: 0.4rem;">
+                  <button class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="openCitationModal('aquino-2026')">Cite</button>
+                  <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-white" style="color: var(--mcnp-green); border-color: var(--mcnp-green);">View in OJS ↗</a>
+                </div>
               </div>
             </div>
           </div>
@@ -280,9 +350,9 @@
             <p style="font-size: 0.82rem; color: #78350f; line-height: 1.5; margin-bottom: 1rem;">
               Manuscripts must follow the IMRAD format (Introduction, Methods, Results, and Discussion) with Vancouver or APA 7th referencing. Max 6,000 words excluding references.
             </p>
-            <button class="btn btn-sm btn-gold" style="width: 100%; justify-content: center;" onclick="showToast('Downloading MCNP Manuscript Template (.docx)...', 'info')">
-              Download Word Template (.docx)
-            </button>
+            <a href="https://journal.mcnp.edu.ph/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-gold" style="width: 100%; justify-content: center; text-decoration: none;">
+              Author Guidelines &amp; Submission ↗
+            </a>
           </div>
         </div>
       </div>
@@ -302,8 +372,10 @@
           <ul class="footer-links">
             <li><a href="about-mcnp.html">&rarr; MCNP Institution</a></li>
             <li><a href="about-isap.html">&rarr; ISAP Institution</a></li>
+            <li><a href="about-rdc.html">&rarr; About RDC (Unified)</a></li>
             <li><a href="about-rdc-mcnp.html">&rarr; MCNP Research Hub</a></li>
             <li><a href="about-rdc-isap.html">&rarr; ISAP Research Hub</a></li>
+            <li><a href="rdc-agenda.html">&rarr; RDC Research Agenda</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -319,7 +391,7 @@
         <div class="footer-col">
           <h5>Contact Secretariat</h5>
           <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">Alimannao Hills, Peñablanca, Cagayan</p>
-          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;">researchoffice.mcnp.edu.ph | +639989847781</p>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.5rem;"><a href="mailto:researchoffice@mcnp.edu.ph" style="color: inherit;">researchoffice@mcnp.edu.ph</a> | +639989847781</p>
           <a href="contact.html" class="btn btn-sm btn-gold" style="margin-top: 0.5rem;">Contact Us</a>
         </div>
       </div>
@@ -329,6 +401,147 @@
     </div>
   </footer>
 
+  <!-- Interactive Citation Modal -->
+  <div class="citation-modal-overlay" id="citationModalOverlay" role="dialog" aria-labelledby="citationModalTitle" aria-modal="true">
+    <div class="citation-modal">
+      <div class="citation-modal-head">
+        <h3 id="citationModalTitle"><i class="fas fa-quote-left"></i> Generate Citation</h3>
+        <button type="button" class="citation-modal-close" id="citationModalClose" aria-label="Close citation modal">&times;</button>
+      </div>
+      <div class="citation-modal-body">
+        <p style="font-size: 0.88rem; color: #475569; margin-bottom: 1rem;" id="citationArticleTitle">
+          Article Title
+        </p>
+
+        <!-- Citation Format Selector Tabs -->
+        <div class="citation-format-tabs" role="tablist">
+          <button type="button" class="citation-format-btn active" data-format="apa">APA (7th)</button>
+          <button type="button" class="citation-format-btn" data-format="mla">MLA (9th)</button>
+          <button type="button" class="citation-format-btn" data-format="chicago">Chicago</button>
+          <button type="button" class="citation-format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+
+        <div class="citation-code-block" id="citationPreviewText">
+          Loading citation...
+        </div>
+
+        <div class="citation-modal-actions">
+          <button type="button" class="btn btn-sm btn-outline-white" style="color: #475569; border-color: #cbd5e1;" onclick="closeCitationModal()">
+            Close
+          </button>
+          <button type="button" class="btn btn-sm btn-mcnp" id="copyCitationBtn">
+            <i class="fas fa-copy"></i> Copy Citation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var CITATIONS = {
+      'pascual-2026': {
+        title: 'Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan Against Clinically Isolated Pathogens',
+        apa: 'Pascual, A. R., Agbisit, D. C., & Guzman, E. K. (2026). Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan Against Clinically Isolated Pathogens. MCNP Journal of Medical & Allied Health Sciences, 8(2), 1-14. https://doi.org/10.5281/mcnp.2026.0821',
+        mla: 'Pascual, A. R., et al. "Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan Against Clinically Isolated Pathogens." MCNP Journal of Medical & Allied Health Sciences, vol. 8, no. 2, 2026, pp. 1-14. DOI: 10.5281/mcnp.2026.0821.',
+        chicago: 'Pascual, A. R., D. C. Agbisit, and E. K. Guzman. "Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan Against Clinically Isolated Pathogens." MCNP Journal of Medical & Allied Health Sciences 8, no. 2 (2026): 1-14.',
+        bibtex: '@article{pascual2026flora,\n  author = {Pascual, A. R. and Agbisit, D. C. and Guzman, E. K.},\n  title = {Assessment of Antimicrobial Activity of Selected Indigenous Flora in Peñablanca, Cagayan Against Clinically Isolated Pathogens},\n  journal = {MCNP Journal of Medical & Allied Health Sciences},\n  volume = {8},\n  number = {2},\n  pages = {1--14},\n  year = {2026},\n  doi = {10.5281/mcnp.2026.0821}\n}'
+      },
+      'baloran-2026': {
+        title: 'Diagnostic Accuracy and Radiation Dose Reduction in Pediatric Chest Digital Radiography Protocols',
+        apa: 'Baloran, C. M., & Macarubbo, F. T. (2026). Diagnostic Accuracy and Radiation Dose Reduction in Pediatric Chest Digital Radiography Protocols. MCNP Journal of Medical & Allied Health Sciences, 8(2), 15-28. https://doi.org/10.5281/mcnp.2026.0822',
+        mla: 'Baloran, C. M., and F. T. Macarubbo. "Diagnostic Accuracy and Radiation Dose Reduction in Pediatric Chest Digital Radiography Protocols." MCNP Journal of Medical & Allied Health Sciences, vol. 8, no. 2, 2026, pp. 15-28. DOI: 10.5281/mcnp.2026.0822.',
+        chicago: 'Baloran, C. M., and F. T. Macarubbo. "Diagnostic Accuracy and Radiation Dose Reduction in Pediatric Chest Digital Radiography Protocols." MCNP Journal of Medical & Allied Health Sciences 8, no. 2 (2026): 15-28.',
+        bibtex: '@article{baloran2026radiography,\n  author = {Baloran, C. M. and Macarubbo, F. T.},\n  title = {Diagnostic Accuracy and Radiation Dose Reduction in Pediatric Chest Digital Radiography Protocols},\n  journal = {MCNP Journal of Medical & Allied Health Sciences},\n  volume = {8},\n  number = {2},\n  pages = {15--28},\n  year = {2026},\n  doi = {10.5281/mcnp.2026.0822}\n}'
+      },
+      'fernandez-2026': {
+        title: 'Nurse Resilience, Compassion Fatigue, and Patient Care Outcomes in Critical Care Units in Northern Luzon',
+        apa: 'Fernandez, L. G., & Pimentel, R. T. (2026). Nurse Resilience, Compassion Fatigue, and Patient Care Outcomes in Critical Care Units in Northern Luzon. MCNP Journal of Medical & Allied Health Sciences, 8(2), 29-42. https://doi.org/10.5281/mcnp.2026.0823',
+        mla: 'Fernandez, L. G., and R. T. Pimentel. "Nurse Resilience, Compassion Fatigue, and Patient Care Outcomes in Critical Care Units in Northern Luzon." MCNP Journal of Medical & Allied Health Sciences, vol. 8, no. 2, 2026, pp. 29-42. DOI: 10.5281/mcnp.2026.0823.',
+        chicago: 'Fernandez, L. G., and R. T. Pimentel. "Nurse Resilience, Compassion Fatigue, and Patient Care Outcomes in Critical Care Units in Northern Luzon." MCNP Journal of Medical & Allied Health Sciences 8, no. 2 (2026): 29-42.',
+        bibtex: '@article{fernandez2026resilience,\n  author = {Fernandez, L. G. and Pimentel, R. T.},\n  title = {Nurse Resilience, Compassion Fatigue, and Patient Care Outcomes in Critical Care Units in Northern Luzon},\n  journal = {MCNP Journal of Medical & Allied Health Sciences},\n  volume = {8},\n  number = {2},\n  pages = {29--42},\n  year = {2026},\n  doi = {10.5281/mcnp.2026.0823}\n}'
+      },
+      'aquino-2026': {
+        title: 'Knowledge, Attitudes, and Self-Medication Practices with Antibiotics Among Rural Households in Peñablanca',
+        apa: 'Aquino, G. B., & Taguinod, K. D. (2026). Knowledge, Attitudes, and Self-Medication Practices with Antibiotics Among Rural Households in Peñablanca. MCNP Journal of Medical & Allied Health Sciences, 8(2), 43-56. https://doi.org/10.5281/mcnp.2026.0824',
+        mla: 'Aquino, G. B., and K. D. Taguinod. "Knowledge, Attitudes, and Self-Medication Practices with Antibiotics Among Rural Households in Peñablanca." MCNP Journal of Medical & Allied Health Sciences, vol. 8, no. 2, 2026, pp. 43-56.',
+        chicago: 'Aquino, G. B., and K. D. Taguinod. "Knowledge, Attitudes, and Self-Medication Practices with Antibiotics Among Rural Households in Peñablanca." MCNP Journal of Medical & Allied Health Sciences 8, no. 2 (2026): 43-56.',
+        bibtex: '@article{aquino2026antibiotics,\n  author = {Aquino, G. B. and Taguinod, K. D.},\n  title = {Knowledge, Attitudes, and Self-Medication Practices with Antibiotics Among Rural Households in Peñablanca},\n  journal = {MCNP Journal of Medical & Allied Health Sciences},\n  volume = {8},\n  number = {2},\n  pages = {43--56},\n  year = {2026},\n  doi = {10.5281/mcnp.2026.0824}\n}'
+      }
+    };
+
+    window.toggleAbstract = function (id, btn) {
+      var el = document.getElementById('abstract-' + id);
+      if (!el) return;
+      var isExpanded = el.classList.contains('expanded');
+      el.classList.toggle('expanded', !isExpanded);
+      btn.innerHTML = isExpanded ? '<span>Read Full Abstract</span> <i class="fas fa-chevron-down"></i>' : '<span>Collapse Abstract</span> <i class="fas fa-chevron-up"></i>';
+    };
+
+    var modalOverlay = document.getElementById('citationModalOverlay');
+    var modalClose = document.getElementById('citationModalClose');
+    var modalTitle = document.getElementById('citationArticleTitle');
+    var modalPreview = document.getElementById('citationPreviewText');
+    var copyBtn = document.getElementById('copyCitationBtn');
+    var formatBtns = document.querySelectorAll('.citation-format-btn');
+    var currentArticleId = '';
+    var currentFormat = 'apa';
+
+    window.openCitationModal = function (articleId) {
+      currentArticleId = articleId;
+      var data = CITATIONS[articleId];
+      if (!data) return;
+      modalTitle.textContent = data.title;
+      currentFormat = 'apa';
+      formatBtns.forEach(function (btn) {
+        btn.classList.toggle('active', btn.dataset.format === 'apa');
+      });
+      renderCitation();
+      modalOverlay.classList.add('active');
+    };
+
+    window.closeCitationModal = function () {
+      modalOverlay.classList.remove('active');
+    };
+
+    if (modalClose) modalClose.addEventListener('click', window.closeCitationModal);
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function (e) {
+        if (e.target === modalOverlay) window.closeCitationModal();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) window.closeCitationModal();
+    });
+
+    formatBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        formatBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentFormat = btn.dataset.format;
+        renderCitation();
+      });
+    });
+
+    function renderCitation() {
+      var data = CITATIONS[currentArticleId];
+      if (!data) return;
+      var text = data[currentFormat] || data.apa;
+      modalPreview.textContent = text;
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var text = modalPreview.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            if (window.showToast) window.showToast('Citation copied in ' + currentFormat.toUpperCase() + ' format!', 'success');
+          });
+        }
+      });
+    }
+  })();
+  </script>
 </body>
 </html>
